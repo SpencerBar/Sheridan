@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive with Media Queries - Sheridan Web Development</title>
+<style>
+    @media all and(min-width:641px) {
+        #timb{display:none;
+            opacity:0%;}
+        #donut{display:inline-block;}}
+    @media all and (max-width: 640px) {
+        #donut{display: none;}
+        #timb{display:inline-block;}
+    }
+
+</style>
+</head>
+<body>
+    <img id="donut" src="../../../Site/images/donut.jpg" alt="Creamy Donut">
+    <img id="timb" src="../../../Site/images/timbit.jpg" alt="One single timbite">
+</body>
+</html>

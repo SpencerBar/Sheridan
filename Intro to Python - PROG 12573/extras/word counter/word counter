@@ -1,0 +1,11 @@
+
+f= open("word.txt","r" )
+
+text = f.read()
+numChar = len(text)
+count = 0
+for char in text:
+    if char == " ":
+        count += 1
+numChar -= count
+print("The number of characters in the text is:", numChar)

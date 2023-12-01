@@ -1,0 +1,26 @@
+1. the operating system is the underlying set of programs that contrllls the computer hardware
+2. the following statement is invalid becuase you cannot assign a value to a constant integer. = in python is the assignment operator not the == equal operator. unlike in math both sides of the equal sign are not the same as the computer reads this as trying to assign 76 with the value of amount. not only is amount not a valid string but 72 is not a valid container
+3.
+print('The cat said "meow."')
+
+4. the code will display:
+The value is val
+
+5. 
+lastName = input("Enter the customer's last name: ")
+6. the value assigned to result will be 21
+7. \n is the newline character. it tell the machine to print the next output on a new line
+8. in the followinf statement the 10 is telling  the f print to format the name with 10 spaces, it will add more if the name is less than 10
+9. the data type will be a float
+10.
+if y == 20:
+   x = 0
+11. when you write an if else statement the else statement is only completed if any of the previous if or elif statements do not trigger. it will proceed any time the program reaches it if no other statement has had its conditions met.
+12. it would print
+Boston
+New York
+13.  none
+14.
+for x in range(6):
+	print('I love to program! ')
+

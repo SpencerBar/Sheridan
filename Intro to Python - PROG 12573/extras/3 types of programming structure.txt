@@ -1,0 +1,24 @@
+3 types of programming structure:
+
+sequential structure
+	normal code flow
+descision  structure
+	if statements
+Repitition structure
+	while loops
+	for loops
+
+keep code d.r.y.
+dont repeat yourself
+
+number = 0
+
+while number < 0:
+	number+=1
+	square = number ** 2
+	print{'number:4d}(square:8d}
+
+
+for variable in [value1, value2, etc.]
+	statement
+	statement

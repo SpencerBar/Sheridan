@@ -1,0 +1,84 @@
+   <!-- /* css - cascading style sheeets html hypertext markup language */
+    /* selector{style-name:valunits;style:val;} */
+    /* tagname,tag{font-family:verdana; font-size:20px;} */
+    /* .classname{color:red;text-transform:uppercase;} */
+    /* every tag can have an id value that is unique and can be used to reference it */
+    /* #tagid:hover{padding:20px; border:thin solid purple; margin:20px;}  - :hover makes the tag hover*/
+    /* <div class = classname> content </div> works like a paragraph tag */
+    /* <span id = tagid>text...</span>  - used for text styling*/
+    /* <a style= text-decoration:none background-color = "white" */
+     -->
+
+     <!-- padding and margin  -->
+     <!-- 20 px wqould be everywhere
+        20px and 10px would be 20 top bottom 10 left right
+        20px 10px 0px 20px would be top, right, bottom, left -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev CSS Basics</title> 
+    <style>
+        body {font-family:verdana;
+            background-color:rgb(155, 106, 106);
+            margin:0px;
+        }
+        h1 {font-size:30px;
+            margin-left:20px;
+            text-align:center;
+        }
+        #author {
+            
+            /* display:inline-block; */
+            background-color:rgb(207, 82, 36); 
+            color:aliceblue;
+            padding:20px;
+            font-size:40px;
+            border-bottom:thick solid rgb(99, 42, 2);  
+        }
+        p {font-size:10p;
+            margin-left:20px;
+
+        }
+        .highlight {
+            
+            background-color:yellow;
+            font-style:italic;
+            font-weight:bold;
+            padding:10px;
+            text-transform: uppercase;
+
+        }
+        
+        a {
+            display:inline-block;
+            border:thin solid white;
+            /* text-align: right; */
+            padding: 5px 10px;
+            color:blanchedalmond;
+            background-color: chocolate;
+        }
+        #lunch {
+            
+            padding: 15px;
+            text-align: center;
+            display:inline-block;
+            background-color: turquoise;
+            color:blue;
+            font-size: 30px;
+            border:thick brown dotted
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Basics!</h1>
+    <div id="author">Barnes's Notes</div>
+    <p>CSS is FUN</p>
+    <p>The weather is very <span class=highlight>sunny!</span></p>
+    <p>I love <span class=highlight>warm</span> weather</p>
+   <p> Here is the <a href="https://www.theweathernetwork.com/ca" style = 'text-decoration:none;'>Weather Channel</a></p>
+   <p id="lunch">I'm thinking I might have a sub from subway for lunch</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+1.2 Exercises
+1.2.1
+inputs - radius/diametre of sphere 
+processing 
+a) to calculate surface area - SA=4 * (pi) * r^2
+b) to calulate volume - v=4/3 *(pi) * r^3
+output - the calculated values for surface area and volume
+
+1.2.2
+create string itNa
+if(itNa != type string
+Display "Enter Item Name"
+
+set string itNa = input
+Display "Enter number of Items"
+errcheck : if(itNu!= type int)
+set int itNu = input
+Display "Enter Item Price"
+set float ItCo = input
+errcheck
+set float totCo = itCo * itNu
+Display 'The total value of ' itNa ' is 'totCo'

@@ -1,0 +1,5 @@
+python 2.2 notes
+
+operands
+// gives a whole number
+% remainder - divide number by two to check whether its even or odd

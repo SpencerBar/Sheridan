@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        font-style: oblique;
+        color:rgb(63, 63, 200);
+    }
+    h1{
+        position:absolute;
+        font-family:cursive;
+        left:700px;
+        text-decoration: underline dotted rgb(63, 63, 200) 5px;   
+        font-size: 40px;        
+    }
+    #dropdown{
+        position:relative;
+        top:10px;
+        left:10px;
+        color:black;
+        border:1px solid black;
+        border-radius: 5px;
+        text-decoration:none ;
+    }
+    #dropdown:hover{
+        color:rgba(52, 51, 51, 0.493);
+        border: 1px dotted rgba(52, 51, 51, 0.493);
+        border-radius: 10px;
+        box-shadow: 10px black;   
+    }
+
+    .Menu{
+        position:relative;
+        top:11px;
+        left:-100px;
+        
+        
+        padding: 0px 200px;
+        border-spacing: 10px;
+        opacity: 0%;
+        color:black;
+        text-decoration: none;
+        transition-duration: 500ms;
+        transition-delay: 500ms;
+        transform-style: ease-in;
+        overflow: hidden;
+        
+        
+        }
+    .Menu:hover{
+        opacity:90%;
+        border: 1px dotted rgba(52, 51, 51, 0.493);
+        border-radius: 5px;
+        border-spacing: 10px;
+        padding: 0 36px;
+        top:11px;
+        left:10px;
+        transition-delay: 100ms;
+       
+        
+    }
+</style>
+<body>
+    <h1>The Title Goes Here </h1>
+    <a id="dropdown" href="" target=_blank>More Info...</a></br>
+
+    <a class="Menu" href="">Page 1</a></br>
+    <a class="Menu" href="">Page 2</a></br>
+    <a class="Menu" href="">Page 3</a></br>
+    <a class="Menu" href="">Page 4</a></br>
+    <a class="Menu" href="">Page 5</a></br>
+
+</body>
+</html>

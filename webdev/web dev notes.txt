@@ -1,0 +1,10 @@
+web dev notes
+
+
+basic html structure <tag param=val> content</tag>
+
+html 
+|-> head
+	|->title
+|->body
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Advanced" CSS</title>
+    <style>
+        body {font-family:verdana;
+
+            }
+        .button{display:inline-block;
+            text-transform:uppercase;
+            text-decoration: none;
+            padding:10px 20px;
+            background-color:purple;
+            color: white;
+            
+            border-radius:2px;
+            box-shadow:rgba(0,0,0,.5) 1px 1px 3px;
+
+        }
+        .button:hover {background-color: rgb(151, 2, 151);
+        }
+        #but1 {
+           /* position:relative;  positions the button 
+           top: -10px;
+           left:20px; */
+
+           position: absolute;
+           right:30px;
+           bottom:30px;
+        }
+        #but2 {
+            position: absolute;
+            right:30px;
+            top:30x;
+            background-color: orange;
+            opacity:90%;
+        }
+        #but2:hover {background-color: rgb(249, 174, 35);
+        }
+        li:nth-child(2) {
+            color : red}
+
+        a[href="https://sheridancollege.ca"] {
+            color:blue;
+            font-weight:bold;}
+    </style>
+</head>
+<body>
+    <h1>Advanced CSS</h1>
+    <a href="" id="but2" class="button">Less</a>
+    <a href="" id="but1" class="button">More</a>
+    <p>The Sunrise was Beautiful</p>
+    <ul>
+    <li>One</li>
+    <li>Duo</li>
+    <li>Tri</li>
+</ul>
+    <div>&copy;2024 <a href="https://sheridancollege.ca">Sheridan</a> </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ZIM - Code Creativity</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+
+// See Docs under Frame for FIT, FILL, FULL, and TAG
+new Frame(FIT, 1024, 768, dark, dark, ready);
+function ready() {
+    
+    // given F (Frame), S (Stage), W (width), H (height)
+    // put code here
+    // const emitter = new Emitter(new Rectangle(50,50,[white,pink],[pink,white])).center();
+    // new MotionController(emitter, "mousemover");
+
+    new Tile(new Circle(50,series(purple, pink, yellow,white)), 8,6)
+        .centerReg()
+        .ble()
+        .animate({props:{scale:2},
+                rewind:true,
+                loop:true,
+                sequence: .1
+});
+} // end ready
+
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>
