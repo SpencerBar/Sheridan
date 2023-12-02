@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0}
+
+.title{
+    font-size: 28px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    margin-left: auto;
+    text-align: center;
+
+    color:rgb(218, 216, 216);
+    background: -webkit-linear-gradient(#eee,#333);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:6px 6px 0px rgba(0,0,0,.3);
+
+    display: block;
+    position: relative;
+    z-index: 4;
+}
+/* found tutorial online to make clouds by carla notarobot credit to her */
+@keyframes move-clouds{
+    from {background-position: 0 0;}
+    to {background-position:10000px 0;}
+}
+
+@keyframes move-twinkle{
+    from {background-position: 0 0;}
+    to {background-position:-10000px 5000px, 100px;}
+}
+
+.star, .twinkle, .cloud{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0; 
+    height:120%;
+    width: 100%;
+    
+   
+}
+
+.star{
+    background: #000 url(/images/stars.png) repeat top center;
+    z-index: 0;
+}
+
+.twinkle{
+    background: transparent url(/images/twinkling.png)repeat top center;
+    z-index: 1;
+    animation: move-twinkle 200s linear infinite;
+}
+
+.cloud{
+    background: transparent url(/images/clouds.png) repeat top center;
+    z-index: 3;
+    opacity: .5;
+    
+    animation: move-clouds 200s alternate-reverse ease-out infinite;
+}
+
+.author{
+    position: relative;
+    margin-left: auto;
+    text-align: center;
+    font-size:15px;
+    z-index: 4;
+    color: #eee;
+
+    background: -webkit-linear-gradient(#eee,#333);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+.box{ 
+    display: flex;
+    flex-flow:row wrap;
+    justify-content:center;
+  
+
+    z-index:2;
+    color:white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       
+}
+.art{
+    display: flex;
+    position: relative;
+    max-width: 300px;
+    min-width:0;
+    padding:10px;
+    border-radius: 10%;
+
+    
+    background: -webkit-linear-gradient(#eee,#333);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;   
+}
+
+.bottom{
+    position: relative;
+    bottom:0px;
+}
+p{
+    margin:40px;
+}
+
+@media all and (max-width:1400px){
+    .art{max-width:200px;}
+    .star{width:300%;}
+}
+@media all and (max-width:900px){
+    .art{max-width:150px;}
+    .star{height:300%;}
+}
+
+
+   
+ 
+   
+   
+
