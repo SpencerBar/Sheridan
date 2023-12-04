@@ -119,31 +119,33 @@ def findGearRatio(gearIndex, allNumListIndex):
     #loop through each line
     for lineNumber in range(len(gearIndex)):
         #if line has a gear
-        if gearIndex[lineNumber] != []:
-            #for each valid index in gearindex
-            for gear in gearIndex[lineNumber]:
-                gearRatioNum = []
-                
-               #if line numbers match + or - 1
-                for numList in allNumListIndex:
-                    # #iterates -1 to 1
-                    for lineRange in range(-1,2):
-                    #iterated through each numlist
-                        if numList[2] == lineRange+lineNumber:
-                            #iterates through index
-                            for index in numList[1]:
-                                # adds range to gear
-                                for gearRange in range(-1,2):
-                                   #if the gear index +- 1 = index
-                                   if gear + gearRange == index:
-                                       #checks for duplicates
-                                       if numList[0] not in gearRatioNum:
-                                        #adds number to gearRatio
-                                        gearRatioNum.append(numList[0])       
-                #if number is good converts it from string to int out of the list
-                if len(gearRatioNum) >= 2:
-                    gearRatio = gearRatioNum[0] * gearRatioNum[1]
-                    totalGearRatio +=gearRatio
+        if gearIndex[lineNumber] == []:
+            continue
+        #for each valid index in gearindex
+        for gear in gearIndex[lineNumber]:
+            gearRatioNum = []
+            #if line numbers match + or - 1
+            for numList in allNumListIndex:
+                # #iterates -1 to 1
+                for lineRange in range(-1,2):
+                #iterated through each numlist
+                    if numList[2] != lineRange+lineNumber:
+                        continue
+                    #iterates through index
+                    for index in numList[1]:
+                        # adds range to gear
+                        for gearRange in range(-1,2):
+                            #if the gear index +- 1 = index
+                            if gear + gearRange != index:
+                                continue
+                            #checks for duplicates
+                            if numList[0] not in gearRatioNum:
+                            #adds number to gearRatio
+                                gearRatioNum.append(numList[0])       
+        #if number is good converts it from string to int out of the list
+            if len(gearRatioNum) >= 2:
+                gearRatio = gearRatioNum[0] * gearRatioNum[1]
+                totalGearRatio +=gearRatio
     return totalGearRatio
 main()
 
