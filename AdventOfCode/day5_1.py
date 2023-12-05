@@ -25,29 +25,39 @@ def fileSort():
 def getCategoryLocationDiff(seedList, categoryList):
     lowestPerSeed = []
     newLocation = []
+    convertCheck = []
     print(categoryList[0])
     for seed in range(len(seedList)):
         lowestPerSeed.append(-1)
+        convertCheck.append(False)
         for categoryLine in range(1,len(categoryList)): 
             destinationStart = int(categoryList[categoryLine][0]) ## this may be the problem
             sourceStart= int(categoryList[categoryLine][1])
             lineRange = int(categoryList[categoryLine][2])
             sourceEnd = sourceStart+lineRange
             
+            
             if int(seedList[seed])>=sourceStart and int(seedList[seed])<= sourceEnd:
                 if lowestPerSeed[seed] == -1:
                     lowestPerSeed[seed] =  int(seedList[seed]) - sourceStart
                 elif lowestPerSeed[seed] > int(seedList[seed])- sourceStart:
                         lowestPerSeed[seed] =  int(seedList[seed]) - sourceStart
+                        
+                else:
+                    convertCheck[seed] =True
             else:
                 if lowestPerSeed[seed] == -1:
                         lowestPerSeed[seed] = int(seedList[seed])
                 elif lowestPerSeed[seed] > int(seedList[seed]):
                         lowestPerSeed[seed] = int(seedList[seed])
+                
+
     ## need to leave it -1 and then make a check to see if it translates instead. that should fix the problem
     for difference in range(len(lowestPerSeed)):
             if lowestPerSeed[difference] == int(seedList[difference]):
                 newLocation.append(int(seedList[difference]))
+            elif convertCheck[difference]:
+                newLocation.append(int(lowestPerSeed[difference]+destinationStart))
             else:
                 newLocation.append(int(lowestPerSeed[difference]+destinationStart))
     return newLocation   
