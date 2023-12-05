@@ -46,23 +46,24 @@ def getCategoryLocationDiff(seedList, categoryList):
     
     for difference in range(len(lowestPerSeed)):
             if lowestPerSeed[difference] == int(seedList[difference]):
-                newLocation.append(seedList[difference])
+                newLocation.append(int(seedList[difference]))
             else:
-                newLocation.append(lowestPerSeed[difference]+destinationStart)
+                newLocation.append(int(lowestPerSeed[difference]+destinationStart))
     return newLocation   
     
 #something in one of these two functions isnt operating correctly
 def doAllCategories(fileSorted):
     newLocation = fileSorted[0]
-    for categories in range(2,len(fileSorted)):
+    for categories in range(2, len(fileSorted)):
         newLocation = getCategoryLocationDiff(newLocation,fileSorted[categories])
-    for locations in newLocation:
         tempLocation = -1
-        if tempLocation == -1:
-            tempLocation = locations
-        else:
-            if tempLocation > locations:
-                tempLocation = locations
+        for locations in newLocation:
+            
+            if tempLocation == -1:
+                tempLocation = int(locations)
+            else:
+                if tempLocation > int(locations):
+                    tempLocation = int(locations)
     print(tempLocation)
 
 
