@@ -28,22 +28,23 @@ def getCategoryLocationDiff(seedList, categoryList):
     print(categoryList[0])
     for seed in range(len(seedList)):
         lowestPerSeed.append(-1)
-        for categoryLine in range(1,len(categoryList)):
-            destinationStart = int(categoryList[categoryLine][0])
+        for categoryLine in range(1,len(categoryList)): 
+            destinationStart = int(categoryList[categoryLine][0]) ## this may be the problem
             sourceStart= int(categoryList[categoryLine][1])
             lineRange = int(categoryList[categoryLine][2])
-             
-            if int(seedList[seed])>sourceStart and int(seedList[seed])< sourceStart+lineRange:
-               if lowestPerSeed[seed] == -1:
-                  lowestPerSeed[seed] =  int(seedList[seed]) - sourceStart
-               elif lowestPerSeed[seed] > int(seedList[seed])- sourceStart:
+            sourceEnd = sourceStart+lineRange
+            
+            if int(seedList[seed])>=sourceStart and int(seedList[seed])<= sourceEnd:
+                if lowestPerSeed[seed] == -1:
                     lowestPerSeed[seed] =  int(seedList[seed]) - sourceStart
+                elif lowestPerSeed[seed] > int(seedList[seed])- sourceStart:
+                        lowestPerSeed[seed] =  int(seedList[seed]) - sourceStart
             else:
-               if lowestPerSeed[seed] == -1:
-                  lowestPerSeed[seed] = int(seedList[seed])
-               elif lowestPerSeed[seed] > int(seedList[seed]):
-                  lowestPerSeed[seed] = int(seedList[seed])
-    
+                if lowestPerSeed[seed] == -1:
+                        lowestPerSeed[seed] = int(seedList[seed])
+                elif lowestPerSeed[seed] > int(seedList[seed]):
+                        lowestPerSeed[seed] = int(seedList[seed])
+    ## need to leave it -1 and then make a check to see if it translates instead. that should fix the problem
     for difference in range(len(lowestPerSeed)):
             if lowestPerSeed[difference] == int(seedList[difference]):
                 newLocation.append(int(seedList[difference]))
@@ -57,13 +58,13 @@ def doAllCategories(fileSorted):
     for categories in range(2, len(fileSorted)):
         newLocation = getCategoryLocationDiff(newLocation,fileSorted[categories])
         tempLocation = -1
-        for locations in newLocation:
-            
-            if tempLocation == -1:
+    for locations in newLocation:
+        
+        if tempLocation == -1:
+            tempLocation = int(locations)
+        else:
+            if tempLocation > int(locations):
                 tempLocation = int(locations)
-            else:
-                if tempLocation > int(locations):
-                    tempLocation = int(locations)
     print(tempLocation)
 
 
