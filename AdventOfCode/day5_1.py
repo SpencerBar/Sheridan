@@ -51,13 +51,13 @@ def getCategoryLocationDiff(seedList, categoryList):
                 newLocation.append(lowestPerSeed[difference]+destinationStart)
     return newLocation   
     
-
+#something in one of these two functions isnt operating correctly
 def doAllCategories(fileSorted):
     newLocation = fileSorted[0]
-    tempLocation = -1
     for categories in range(2,len(fileSorted)):
         newLocation = getCategoryLocationDiff(newLocation,fileSorted[categories])
     for locations in newLocation:
+        tempLocation = -1
         if tempLocation == -1:
             tempLocation = locations
         else:
