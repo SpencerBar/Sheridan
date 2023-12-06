@@ -121,11 +121,6 @@ def getSeedList(seedRangeList, categoryList):
                                 lowestSeedList.append(seedMatch)
         return lowestSeedList
 
-        
-            
-        
-   
-
 
 def doAllCategoriesRange(fileSorted):
     newLocation = fileSorted[0] 
