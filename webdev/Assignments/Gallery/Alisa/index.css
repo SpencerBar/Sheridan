@@ -1,0 +1,115 @@
+body {
+  background-color: rgb(227, 216, 191);
+  background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
+}
+
+header {
+  font-family: "Montserrat", sans-serif;
+  margin: 0rem 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+pre {
+  font-size: 0.8vw;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(71, 71, 71);
+  margin-top: 1rem;
+}
+
+a:hover {
+  color: rgba(71, 71, 71, 0.675);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+img {
+  width: auto;
+  border-radius: 10px;
+  height: 60vh;
+  object-fit: cover;
+}
+
+figure {
+  margin: 0;
+}
+
+figure p {
+  font-size: large;
+  font-family: "M PLUS Code Latin", monospace;
+}
+
+@media all and (max-width: 1730px) {
+  img {
+    height: 55vh;
+  }
+}
+
+@media all and (max-width: 1580px) {
+  img {
+    height: 50vh;
+  }
+}
+
+@media all and (max-width: 1450px) {
+  img {
+    height: 45vh;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  img {
+    height: 60vh;
+  }
+}
+
+@media all and (max-width: 1180px) {
+  img {
+    height: 50vh;
+  }
+}
+
+@media all and (max-width: 990px) {
+  img {
+    height: 45vh;
+  }
+}
+
+@media all and (max-width: 880px) {
+  img {
+    height: 40vh;
+  }
+}
+
+@media all and (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    height: 60vh;
+  }
+}
+
+@media all and (max-width: 700px) {
+  img {
+    height: 50vh;
+  }
+}
