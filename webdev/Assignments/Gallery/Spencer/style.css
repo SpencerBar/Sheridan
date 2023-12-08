@@ -40,20 +40,20 @@
 }
 
 .star{
-    background: #000 url(/Spencer/images/stars.png) repeat top center;
+    background: #000 url(../Spencer/images/stars.png) repeat top center;
     z-index: 0;
     
     
 }
 
 .twinkle{
-    background: transparent url(/Spencer/images/twinkling.png)repeat top center;
+    background: transparent url(../Spencer/images/twinkling.png)repeat top center;
     z-index: 1;
     animation: move-twinkle 200s linear infinite;
 }
 
 .cloud{
-    background: transparent url(/Spencer/images/clouds.png) repeat top center;
+    background: transparent url(../Spencer/images/clouds.png) repeat top center;
     z-index: 3;
     opacity: .5;
     animation: move-clouds 200s alternate-reverse ease-out infinite;

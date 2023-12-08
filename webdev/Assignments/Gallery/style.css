@@ -36,16 +36,16 @@ section {
 }
 
 #gallery_1{
-    background-image: url('/images/monsters.png');
+    background-image: url('images/monsters.png');
     
 }
 
 #gallery_2{
-    background-image: url('/images/bunnies.png');
+    background-image: url('images/bunnies.png');
 }
 
 #gallery_3 {
-    background-image: url('/images/weiner.png');
+    background-image: url('images/weiner.png');
     background-position: right;
     
 }
