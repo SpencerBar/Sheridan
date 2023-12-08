@@ -12,6 +12,13 @@ body {
 }
 
 section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
     display: flex;
     width: 33.33vw;
     height: 100%;
@@ -28,16 +35,6 @@ section {
     transition: width 0.5s;
 }
 
-section::before {
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    z-index: -1;
-}
 #gallery_1{
     background-image: url('/images/monsters.png');
     
