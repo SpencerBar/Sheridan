@@ -1,0 +1,11 @@
+1. Create a class called AverageCalculator that:
+
+- takes three decimal numbers, calculates the average of them, and prints out the answer in a userFriendlyManner
+
+
+
+
+HINT 1 - Remember that we use double to hold decimal values
+HINT 2 - To figure out the average of a bunch of numbers, we have to add them all up and then divide them by how many numbers we added
+HINT 3 - Remember that we need to follow order of operations so we have to add up all of the numbers and THEN divide by how many numbers. ()s are your friend here
+
