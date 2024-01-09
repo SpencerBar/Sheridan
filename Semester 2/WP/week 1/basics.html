@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JavaScript Basics on Canvas</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+
+// See Docs under Frame for FIT, FILL, FULL, and TAG
+new Frame(FIT, 1024, 768, light, dark, ready);
+// defining a function
+function ready() {
+    
+    // given F (Frame), S (Stage), W (width), H (height)
+    // put code here
+    // chaining the center() method returns the object
+    const circ = new Circle(100, blue)
+        .center(S)
+        .drag();
+
+    const rect = new Rectangle(200, 200, orange)
+        .loc(100,100)
+        .drag();
+
+    const s  = "string literal";
+    const n = 7;
+
+    // object literal
+    const obj = {
+        name: "me",
+        occ:"innovator"
+    }
+    const rect1 = new Rectangle({width:200, height:200,color:dark, corner:20}).loc(150,150)
+    circ.addEventListener("pressup", test);
+    function test(){
+        if(circ.hitTestCircleRect(rect)){
+            console.log("hitting from console"); 
+            new Emitter().loc(circ).spurt(5)
+            circ.removeFrom()
+            S.update()
+           
+
+    }}
+   
+}
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>

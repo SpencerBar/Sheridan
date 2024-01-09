@@ -1,0 +1,16 @@
+javascript frameworks: jquery(DOM access and mobile), react(facebooks library), angular(google library), vue(relatively easier to use), svelt
+ p5js(for making art), phaser(for making games), ZIM (dan zens use for bunus)
+
+document.getelementbyID
+
+codepen.io
+
+
+a canvas is one picture that can change and be modified with javascript
+
+
+cdn- a content delivery network on the cloud
+
+let and const are the two types of variables. let for all variables that change const for constants
+
+using a .method() is the format for methods
