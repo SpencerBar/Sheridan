@@ -8,7 +8,7 @@
     ],
     "java.format.settings.url": ".vscode/java-formatter.xml",
     "java.debug.settings.stepping.skipClasses": [
-        // "$JDK"
+        "$JDK"
     ],
     "foldOnOpen.targets": [
         "AllBlockComments",
