@@ -1,0 +1,8 @@
+Write a program with a single class called Year.  
+
+    a.  That will use appropriate variables to determine how many seconds there are in a year and output your answer in a user friendly way.  
+
+
+ HINTS: 
+
+Hint#1:  How many days in a year?  How many hours in a day?  How many minutes in a hour?  How many seconds in a minute???  Don't forget to use variables to store everything.  Don't just hard-code numbers into your solution.

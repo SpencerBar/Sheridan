@@ -1,0 +1,8 @@
+Write a program with a single class called AboutMe.
+
+    a. Store your age in an appropriate variable 
+    b. Store your name in an appropriate variable 
+    c. Calculate how many days there are from the day you were born to your last birthday 
+    d. Print out something like the following: 
+
+        Hello, my name is Rich. I am 80 years old. That is 29, 200 days! 

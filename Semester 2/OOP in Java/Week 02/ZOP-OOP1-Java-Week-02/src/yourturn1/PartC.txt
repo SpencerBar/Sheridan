@@ -1,0 +1,16 @@
+1. Write a program with a single class called Apples
+    a. Don’t copy and paste from other code! 
+    b. You have 680 apples. 
+    c. Each full basket can contain 50 apples. 
+    d. Determine how many full baskets of apples that we can fill. 
+    e. Use good variable names! 
+    f. Output the result in a pleasant fashion using a String. 
+ 
+ 
+    Hint #1:  We only care about full baskets...we don’t care about any fractions 
+    Hint #2:  I find that using smaller numbers sometimes help me to think.  What if there were 5 apples and each basket could only hold 2 apples?  Great, you did that in your head.  Now, what did you do to come up with the answer?
+
+ 2. For the extra smarty-pants...also output how many apples are left over.   
+
+
+    Hint#1: Do you remember modulus from math class?  Modulus tells us how many are left over after dividing.  In java, we use % to indicate modulus.  For example:  3%5  is 2 |||  3%6 is 0  ||| 3%7 is 1
