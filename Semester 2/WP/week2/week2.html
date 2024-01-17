@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ZIM - Falling! Code Creativity</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+
+// See Docs under Frame for FIT, FILL, FULL, and TAG
+new Frame(FIT, 1024, 768, interstellar, black, ready);
+function ready() {
+    
+    // given F (Frame), S (Stage), W (width), H (height)
+    // put code here
+
+    // setInterval(makeStar, 1000); // function, time (ms)
+
+    // function makeStar() {  
+    //     // console.log();   
+    //     zog("making star")   
+    //     new Poly(150, 6, .7, purple).center()
+    //     S.update()
+    // }
+    // makeStar(); // start right away if desired
+
+    // anonymous function
+    // setInterval(function(){ 
+    //     // do function
+    // }, 1000)
+
+    // arrow function
+    // const time = .1 + Math.random()*(2-.1);
+    // const time = rand(.1, 2);
+    // interval(time, ()=>{})
+
+    interval( {min:.1, max:.5}, () => {
+        // zog("making star")   
+        new Poly(40, [5, 6, 7], {min:.5, max:.9}, [yellow,green,pink])
+            .loc(Math.random()*W, -50)
+            .animate({y:H+50}, 2, "linear", target=>{target.dispose();} ); // easing equations like "bounceOut"
+        S.update();
+    }, undefined, true); // number of times to run and start right away
+
+    // manual animation
+    // const circle = new Circle(50,white).center();
+    // interval(.1, ()=>{
+    //     circle.x += 5;
+    //     S.update();
+    // });   
+    // or use a ZIM Ticker!
+    // Ticker.add(()=>{ // runs a requestAnimationFrame in JS6
+    //     circle.x += 5;
+    //     S.update();
+    // })
+
+    const player = new Circle(40, blue).pos(0, 50, CENTER, BOTTOM);
+
+    // ZIM MotionController
+    new MotionController(player, "keydown", 10,BOTH, S);
+
+    // basic JS movement
+    // F.on("keydown", (e)=>{ // e is the event object (evt, eventObj, etc.)
+    //     zogr(e.key);
+    //     if (e.key == "ArrowLeft") player.x -= 10;
+    //     else if (e.key == "ArrowRight") player.x += 10;
+    //     if (player.x > W) player.x = W;
+    //     if (player.x < 0) player.x = 0;
+    // });
+    
+
+    // new Tile(new Poly(40, [5, 6, 7], {min:.5, max:.9}, series(blue,green,pink) ), 9, 6, 10, 10)
+    //     .center();
+    
+        
+} // end ready
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>
+</html>
