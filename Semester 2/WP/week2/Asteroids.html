@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ZIM - Asteroids! Code Creativity</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+
+// See Docs under Frame for FIT, FILL, FULL, and TAG
+// put multiple assets in an array
+const pics = ["a0.png", "a1.png", "a2.png", "a3.png", "a4.png", "a5.png", "a6.png"]
+const assets = [...pics, "boom.mp3", "boom.png", "hit.mp3", "pod.png", "shoot.mp3", "space.jpg"];
+const path = "changeToYourPath/";
+new Frame(FIT, 1024, 768, interstellar, dark, ready, assets, "assets/");
+function ready() {
+    // zimjs.com/beam/wp_falling = URL TO THIS CODE
+    // given F (Frame), S (Stage), W (width), H (height)
+    // put code here
+    const backing = new Pic("space.jpg").scaleTo().alp(.75).center();
+    new Scroller(backing,1,-1,false);
+    //const asteroid = new Pic("a0.png").sca(.6).cur("crosshair").reg(CENTER).center();
+    const boomEffect = new Sprite('boom.png',8,6).reg(CENTER);
+    const boom = new Aud("boom.mp3");
+    // asteroid.on("mousedown",()=>{
+    //     //console.log("down");
+    //     boom.play();
+    //     boomEffect.loc(asteroid).run();
+    //     asteroid.dispose();
+    //     S.update();
+        
+    // })
+  
+    
+    const asteroid =  new Container(W,H).addTo();
+   // spawn asteroids
+    interval({min: .2, max: .5}, () => {
+       zog("making asteroid");
+       new Pic(pics)
+        .sca(rand(.2,.6))
+        .reg(CENTER)
+        .loc(Math.random() * W, -100, asteroids)
+        .animate({y:H + 100, rotation:rand(-600,600)}, {min:1.5, max:5}, "linear", starget => { starget.dispose();
+        }); 
+        S.update();
+    }, undefined, true); 
+
+    //render player pod
+    const player = new Pic("pod.png")
+        .sca(.4)
+        .pos(0, 10, CENTER, BOTTOM);// 0 from center, 50 from bottom
+    const asteroids = new Container(W, H).addTo();
+
+    //JS For Loop    
+    for (let i=0; i<asteroids.numChildren; i++) {
+       console.log(i);
+       let asteroid = asteroids.getChildAt(i); // get the star
+    }
+
+//explode asteroids
+    Ticker.add(() => {
+            asteroids.loop(asteroid => {
+            if (player.hitTestCircles(asteroid)) {
+                boom.play();
+                boomEffect.loc(asteroid).run();
+                asteroid.dispose();
+        
+            }
+          }, true); // true means WILL LOOP BACKWARDS
+    })
+
+
+    // ZIM MotionController = Simple Zim way of movement???
+    new MotionController(player, "keydown", 10, HORIZONTAL, S);
+    // be sure to look at DOCS for parameter info
+
+    new Label("A S T E R O I D S", 80, null, white).alp(.7).pos(0,50, CENTER);
+    
+} // end ready
+
+
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>

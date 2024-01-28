@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ZIM - Falling! Code Creativity</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+
+// See Docs under Frame for FIT, FILL, FULL, and TAG
+// put multiple assets in an array
+new Frame(FIT, 1024, 768, interstellar, dark, ready);
+function ready() {
+    // zimjs.com/beam/wp_falling = URL TO THIS CODE
+    // given F (Frame), S (Stage), W (width), H (height)
+    // put code here
+
+    // setInterval(makeStar, 1000); // function, time (ms)
+
+    // anonymous function
+    //setInterval(function() {
+        // function stuff goes here
+        // second parameter is time
+    // }, 1000)
+
+    // const timeJS = .1 + Math.random() * (2-.1);
+    //const timeZim = rand(.1, 2);
+    //interval(time, () => {
+    //})
+
+    
+
+    // arrow function
+    // set random times for interval to happen (min / max)
+    interval({min: .1, max: .5}, () => {
+       zog("making star");
+       new Poly(50, [5, 6, 7], {min: .5, max: .9}, [blue, green, pink], white, 3)
+        .loc(Math.random() * W, -20, stars)
+        .animate({y:H + 50}, 2, "linear", starget => { // if one parameter, dont need round brackets on AF
+            starget.dispose();
+        }); // easing equations (like "bounceOut")
+        // animates the sprite downwards by the H
+        // can use math.random to spawn stars at different locations
+        S.update();
+        // function goes here
+        // in ZIM time parameter goes first
+        // ZIM timer uses seconds
+    }, undefined, true); // 10 or undefined = number of times to run, true = starts right away
+
+    
+
+    // manual animation
+
+    // const circle = new Circle(50, white).center();
+    // this will animate circle sideways 
+    //interval(.1, () => {
+        // circle.x += 5;
+        // S.update();
+    // });
+    //Ticker.add(() => { // Runs requestAnimationFrame in JS6
+      //  circle.x += 5;
+        //S.update();
+    //});
+
+    // TILING
+    // can tile the object with different parameters for spacing, row/col #s
+    // can use this to make sure assests are coming in randomized
+    // can use dynamic parameters (min/max, arrays, etc)
+    // series will cycle through array of parameters
+    //new Tile(new Poly(50, [5, 6, 7], {min: .5, max: .9}, series(blue, green, pink), white, 3), 9, 6, 10, 10)
+        //.center();
+
+    const player = new Circle(40, blue).pos(0, 50, CENTER, BOTTOM); // 0 from center, 50 from bottom
+
+
+    const stars = new Container(W, H).addTo();
+
+    //JS For Loop    
+    for (let i=0; i<stars.numChildren; i++) {
+       console.log(i);
+       let star = stars.getChildAt(i); // get the star
+    }
+
+   const emitter = new Emitter({startPaused:true});
+    
+
+    Ticker.add(() => {
+            stars.loop(star => {
+            if (player.hitTestCircles(star)) {
+                emitter.loc(star).spurt(10);
+                star.dispose();
+            }
+          }, true); // true means WILL LOOP BACKWARDS
+    })
+
+
+   
+
+   // if (player.hitTestBounds(star)) {
+        // remove star
+    //}
+
+    // ZIM MotionController = Simple Zim way of movement???
+    new MotionController(player, "keydown", 10, HORIZONTAL, S);
+    // be sure to look at DOCS for parameter info
+
+    // BASIC MOVEMENT
+    //F.on("keydown", (e) => { // e is the event object
+      //zogr(e);  
+      //if (e.key == "ArrowLeft") player.x -= 10;
+      //else if (e.key == "ArrowRight") player.x += 10;
+      // sets boundaries
+      //if (player.x > W) player.x = W;
+      //if (player.x < 0) player.x = 0;
+    //});
+
+    //function makeStar() {
+        //zog("making star");
+        //new Poly(150, 6, .7, purple).center();
+        //S.update();
+    //}
+
+    
+    
+} // end ready
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>
