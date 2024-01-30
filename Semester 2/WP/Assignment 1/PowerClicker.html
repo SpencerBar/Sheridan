@@ -16,11 +16,11 @@ const path = "changeToYourPath/";
 new Frame(FIT, 1024, 768, interstellar, dark, ready, assets, "assets/");
 
 // new variables
-let joules = 0;
+let watts = 0;
 let setBoosterOn = false;
-let joulesPerClick = 1;
+let wattsPerClick = 1;
 let clickerPrice = 1000;
-let joulesPerSec = 0;
+let wattsPerSec = 0;
 
 function ready() {
 
@@ -31,7 +31,7 @@ function ready() {
     
     const lightning =  new Container(W,H).addTo();
    // spawn lightnings
-    interval({min: 100, max: 140}, () => {
+    interval({min: 10, max: 14}, () => {
        zog("Dropping Booster");
        new Pic("lightning.png")
        .sca(.2)
@@ -50,7 +50,7 @@ function ready() {
     const lightnings = new Container(W, H).addTo();
 
 
-//explode lightnings and add joules/ booster
+//explode lightnings and add watts/ booster
     Ticker.add(() => {
         
         lightnings.loop(lightning => {
@@ -59,12 +59,12 @@ function ready() {
                 lightningEffect.loc(lightning).run();
                 lightning.dispose();
                 setBoosterOn = true;
-                joules += 10;
+                watts += 10;
                 
         if (setBoosterOn){
-            joulesPerClick = 2;
-            joulesLabel.dispose();
-            joulesLabel = new Label(joules + " joules", 60, null, yellow).pos(0,200, CENTER);
+            wattsPerClick = 2;
+            wattsLabel.dispose();
+            wattsLabel = new Label(watts + " watts", 60, null, yellow).pos(0,200, CENTER);
             }
         })
         
@@ -73,30 +73,30 @@ function ready() {
     // reset booster periodically
     interval({min:100, max:400}, () =>{
                 setBoosterOn = false
-                joulesPerClick = 1;
+                wattsPerClick = 1;
                 console.log("reset booster")
                 })
 
-    // add clicks per second to joules from bought clickers
+    // add clicks per second to watts from bought clickers
     interval(1,() =>{
-        if (joulesPerSec > 0){
-            new Emitter(new Label(joulesPerClick * joulesPerSec,30,null, yellow).reg(CENTER)).spurt(1)
+        if (wattsPerSec > 0){
+            new Emitter(new Label(wattsPerClick * wattsPerSec,30,null, yellow).reg(CENTER)).spurt(1)
             .center();
-            joules += joulesPerSec * joulesPerClick;
-            joulesLabel.dispose();
-            joulesLabel = new Label(joules + " joules", 60, null, yellow).pos(0,200, CENTER);
+            watts += wattsPerSec * wattsPerClick;
+            wattsLabel.dispose();
+            wattsLabel = new Label(watts + " watts", 60, null, yellow).pos(0,200, CENTER);
     }
     })
 
-    let joulesLabel = new Label(joules + " joules", 60, null, yellow ).pos(0,200, CENTER);
+    let wattsLabel = new Label(watts + " watts", 60, null, yellow ).pos(0,200, CENTER);
     battery.on("mousedown",() =>{
-        new Emitter(new Label(joulesPerClick,30,null, yellow).reg(CENTER)).spurt(1,1)
+        new Emitter(new Label(wattsPerClick,30,null, yellow).reg(CENTER)).spurt(1,1)
         .center();
         Throb(battery, .42,.07);
-        joulesLabel.dispose();
-        joules += joulesPerClick;
-        //console.log(joules);
-        joulesLabel = new Label(joules + " joules", 60, null, yellow).pos(0,200, CENTER);
+        wattsLabel.dispose();
+        watts += wattsPerClick;
+        //console.log(watts);
+        wattsLabel = new Label(watts + " watts", 60, null, yellow).pos(0,200, CENTER);
         S.update()
         })
        
@@ -104,15 +104,15 @@ function ready() {
     new Label("Power Clicker", 80, null, yellow).pos(20,20, CENTER);
     let buyClicker = new Label("Buy Clicker - " + clickerPrice, 30, null, white).pos(-100, 0,RIGHT, CENTER).reg(CENTER);
     
-// checks if you have enough joules and if so purchases an autoclicker
+// checks if you have enough watts and if so purchases an autoclicker
     
     buyClicker.on("mousedown",() =>{
         Throb(buyClicker, 1.1, .07);   
-        if (joules >= clickerPrice){
-            joules -= clickerPrice;
-            joulesLabel.dispose();
-            joulesLabel = new Label(joules + " joules", 60, null, yellow).pos(0,200, CENTER);
-            joulesPerSec += 1;
+        if (watts >= clickerPrice){
+            watts -= clickerPrice;
+            wattsLabel.dispose();
+            wattsLabel = new Label(watts + " watts", 60, null, yellow).pos(0,200, CENTER);
+            wattsPerSec += 1;
         }
         else{
             new Emitter(new Label("Not enough",20,null, red).reg(CENTER)).spurt(1)
