@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom with Dan</title>
+    <style>
+        body{
+            font-family:verdana;
+        }
+        #animate {
+            
+            font-size:40px;
+            padding:20px;
+            background-color: purple;
+            color: white;
+            display:inline-block;
+            position: relative;
+        }
+        
+    </style>
+
+    <!-- for DOM content -->
+    <script>
+        window.addEventListener("DOMContentLoaded",()=>{
+            //console.log("DOM content loaded");
+            // access tag by accessing document
+            const animate = document.getElementById("animate");
+            //console.log(animate);
+            animate.style.cursor = "pointer";
+            animate.addEventListener("click",(e) =>{
+                console.log("clicking");
+                animate.innerHTML = "<em>ZOOOM</em>";
+                //animate.innerText = "ZOOOM";
+            //animate the animation to the left
+            let dist = 0;
+            let wind = window.innerWidth;
+            let intervalId = setInterval(()=>{
+                dist ++;
+                wind = window.innerWidth;
+                //stops interval
+                if (dist >= wind) dist = 0;
+                // if (dist > 300) clearInterval(intervalId);
+                animate.style.left = dist + "px";
+                sheridan.style.top = "50px";
+            }, 10);//milliseconds
+
+                
+            });
+
+            const sheridan = document.createElement("a");
+            sheridan.id = "sheridan";
+            sheridan.innerText = "Sheridan";
+            sheridan.style.position = "relative";
+            sheridan.setAttribute("width", 300);
+            sheridan.setAttribute("href", "https://www.sheridancollege.ca/");
+            sheridan.setAttribute("target","_blank");
+            
+            document.body.appendChild(sheridan);
+            
+
+        });
+    </script>
+</head>
+<body>
+    <div id="animate">ANIMATE</div>
+    
+</body>
+</html>
