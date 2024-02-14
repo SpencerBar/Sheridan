@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #top {
+            margin-top:20px;
+            border:thin white solid;
+            text-align:center;
+           
+        }
+        #top a{
+            text-decoration: none;
+            padding:10px 20px;
+            background-color: beige;
+        }
+    </style>
+    <script>
+        // // Q1
+        // let rockStar = "Prince";
+        // setTimeout(()=>{
+        //     rockStar = "The musician formerly known as Prince";
+        //     console.log(rockStar);
+        // },5000);
+
+        // // Q2
+        // let total = 0;
+        // const intervalId = setInterval(()=>{
+        //     total+=Math.random()*10;
+        //     if (total >100){
+        //         clearInterval(intervalId);
+        //     }
+        // },500);
+
+        // //Q3
+        // let arrayName = ["spencer", "jeff","anita"]
+        // arrayName.sort();
+        // for (let i = 0;i < arrayName.length; i++){
+        //     console.log(arrayName[i])
+        // }
+        // arrayName[arrayName.length]="Kevin Bacon";
+        // arrayName.push("Jimi Hendrix");
+    
+        
+        // for (let i = 0;i < arrayName.length; i++){
+        //     console.log(arrayName[i])
+        // }
+
+        // //Q4
+        // const course = {
+        //     name:"Web Programming",
+        //     teacher:"Dr. Abstract",
+        //     grade:98,
+        // }
+        // function changeGrade(grade){
+        //     course.grade = grade;  
+        // }
+        // changeGrade(80);
+        // console.log(course);
+
+        // course.student = "Ronald S.";
+        // course["student1"] = "Ronald SA.";
+        // console.log(course);
+        // //Q5
+        window.addEventListener("DOMContentLoaded",()=>{
+            const top = document.getElementById("top");
+            top.addEventListener("mouseover",()=>{
+                top.style.border = "thin red solid"
+            });
+            top.addEventListener("mouseout",()=>{
+                top.style.border = "thin white solid";
+            });
+        //Q6
+            const tag = document.createElement("a");
+            tag.setAttribute("href","https://rockstar.com");
+            document.body.appendChild(tag)
+
+            tag.innerHTML ="<img src='https://shorturl.at/djnrx'>"
+        //Q7  
+            class Concert{
+                #attendence;
+                #city;
+               
+                constructor(city, attendence){ 
+                    this.#city = city;
+                    this.#attendence = attendence;
+                    console.log(this.#city + " with attendence "+ this.#attendence);
+                    this.eject =()=>{this.#attendence--;}
+                };
+                admit(){
+                    this.#attendence++;
+
+                }
+            }
+            let concert1 = new Concert("oakville", 100000);
+            console.log(concert1)
+        
+        concert1.admit();
+        console.log(concert1)
+        concert1.eject();
+        console.log(concert1)
+        //Q8
+        class Opera extends Concert{
+            constructor(city){
+                super(city, 100);
+                
+            }
+            admit(){
+                super.admit();
+                console.log("$100");
+            }
+
+        }
+
+        })
+            
+
+    </script>
+</head>
+<body>
+    <nav id="top">
+        <a href="">ONE</a><a href="">TWO</a><a href="">TRI</a>
+    </nav>
+    
+</body>
+</html>

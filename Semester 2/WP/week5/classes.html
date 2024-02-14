@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Classes</title>
+    <script src="scripts/old.js"></script>
+    <script type="module">
+        import {name, doIt} from "./modules/wp.js";
+        
+        console.log(name);
+        console.log("A cdn is a content delivery network");
+        doIt();
+
+        import wp from "./modules/wp.js";
+        wp.closeBook();
+        closeBook();
+        wp.readMe();
+
+        // class Fruit {
+
+        // }
+
+        //creating object of class type Fruit with the description of tasty
+        const orange = new wp.Fruit("tasty");
+        orange.desc = "yucky";
+        // calling the object method .eat()
+        orange.eat();
+        console.log(orange.desc);
+
+        const banana = new wp.Banana();
+        banana.color = "yellow";
+        console.log(banana.color)
+        banana.eat();
+        console.log(banana.color);
+        banana.cut();
+
+
+    </script>
+</head>
+<body>
+    <img src="https://imgs.search.brave.com/EqZ7lYWqVtBRo3vy8aCa0JwP_60YZ7PVAxqCnHuN3ig/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tMHZp/ZS5maWxlcy53b3Jk/cHJlc3MuY29tLzIw/MTIvMTAvYm9uZC1i/bG9mZWxkLmpwZz93/PTQ2OA"></img>
+    
+</body>
+</html>
