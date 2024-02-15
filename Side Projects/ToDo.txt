@@ -1,0 +1,14 @@
+attributes to add to moves enum: power, accuracy, type, crit rate, effect, pp.
+ 
+attributes to add to monster class: currenthp level, exp, level group, movesarray, movescurrentpp, capturerate(set owned to 0%).
+methods to add to monster class: attack, receive dmg, get exp, level up, learn move, reorder move,restore hp, catchattempt.
+
+create level group (maybe an enum, look into how much exp works in monstermon and emulate)
+
+create battle method?
+
+create party class:
+    attributes:monsterarray
+    methods: swap monsters pos
+    
+
