@@ -4,11 +4,17 @@ attributes to add to monster class: currenthp level, exp, level group, movesarra
 methods to add to monster class: attack, receive dmg, get exp, level up, learn move, reorder move,restore hp, catchattempt.
 
 create level group (maybe an enum, look into how much exp works in monstermon and emulate)
-
-create battle method?
+create badge enum.
+create battle method.
+create items enum.
+create bag class with multiple "pouches": healing, battle, ball, key, utility, tm
+create player class. hold party, bag, badges attained, menu method.
+create pcBox class.
+create Route class.
 
 create party class:
-    attributes:monsterarray
-    methods: swap monsters pos
-    
+    attributes: monsterarray
+    methods: swap monsters pos, use items
+
+    --- Need to figure out reading and writing from files to create a save file in Java ---  
 
