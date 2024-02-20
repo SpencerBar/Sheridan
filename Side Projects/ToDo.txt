@@ -4,6 +4,10 @@ attributes to add to monster class: currenthp level, exp, level group, movesarra
 methods to add to monster class: attack, receive dmg, get exp, level up, learn move, reorder move,restore hp, catchattempt.
 
 create level group (maybe an enum, look into how much exp works in monstermon and emulate)
+Fast Level Group: Start at 120% of the base experience and decrease linearly to 100% by level 45. Afterward, decrease sharply to reach 50% by level 100.
+Medium-Fast Level Group: Start at 100% of the base experience and maintain this rate until level 50. Then, decrease gradually to 75% by level 100.
+Medium-Slow Level Group: Start with an experience modifier of 50% at level 1. Increase the experience modifier gradually until level 50, reaching 75% at that point. After level 50, continue increasing the experience modifier at a slightly slower rate compared to the Fast group.
+Slow Level Group: Start at 50% of the base experience and increase linearly to 60% by level 50. Then, continue increasing steadily to reach 150% by level 100.
 create badge enum.
 create battle method.
 create items enum.
@@ -17,4 +21,194 @@ create party class:
     methods: swap monsters pos, use items
 
     --- Need to figure out reading and writing from files to create a save file in Java ---  
+    
 
+--- this is chat gpts total exp calculator to be used later--
+    def calculate_total_exp(start_percentage, end_percentage, start_level, end_level):
+    return sum(calculate_exp(level, base_exp, start_percentage, end_percentage, start_level, end_level) for level in range(1, 101))
+
+# Total experience required for level 100 for each level group
+total_exp_fast = calculate_total_exp(120, 50, 1, 45) + calculate_exp(46, base_exp, 50, 50, 46, 100)
+total_exp_medium_fast = calculate_total_exp(100, 90, 1, 100)
+total_exp_medium_slow = calculate_total_exp(70, 120, 1, 50) + calculate_exp(51, base_exp, 120, 120, 51, 100)
+total_exp_slow = calculate_total_exp(50, 150, 1, 100)
+
+print("Total experience required for Fast Level Group to reach level 100:", total_exp_fast)
+print("Total experience required for Medium-Fast Level Group to reach level 100:", total_exp_medium_fast)
+print("Total experience required for Medium-Slow Level Group to reach level 100:", total_exp_medium_slow)
+print("Total experience required for Slow Level Group to reach level 100:", total_exp_slow)
+
+---base exp per pokemon--
+Bulbasaur: 64
+Ivysaur: 142
+Venusaur: 236
+Charmander: 62
+Charmeleon: 142
+Charizard: 240
+Squirtle: 63
+Wartortle: 142
+Blastoise: 239
+Caterpie: 39
+Metapod: 72
+Butterfree: 173
+Weedle: 39
+Kakuna: 72
+Beedrill: 173
+Pidgey: 50
+Pidgeotto: 122
+Pidgeot: 216
+Rattata: 51
+Raticate: 145
+Spearow: 52
+Fearow: 155
+Ekans: 58
+Arbok: 157
+Pikachu: 112
+Raichu: 218
+Sandshrew: 60
+Sandslash: 158
+Nidoran♀: 55
+Nidorina: 128
+Nidoqueen: 227
+Nidoran♂: 55
+Nidorino: 128
+Nidoking: 227
+Clefairy: 113
+Clefable: 217
+Vulpix: 63
+Ninetales: 178
+Jigglypuff: 95
+Wigglytuff: 196
+Zubat: 54
+Golbat: 171
+Oddish: 78
+Gloom: 132
+Vileplume: 221
+Paras: 70
+Parasect: 128
+Venonat: 61
+Venomoth: 158
+Diglett: 53
+Dugtrio: 149
+Meowth: 58
+Persian: 154
+Psyduck: 64
+Golduck: 175
+Mankey: 61
+Primeape: 159
+Growlithe: 70
+Arcanine: 194
+Poliwag: 60
+Poliwhirl: 135
+Poliwrath: 230
+Abra: 62
+Kadabra: 140
+Alakazam: 225
+Machop: 61
+Machoke: 142
+Machamp: 227
+Bellsprout: 60
+Weepinbell: 137
+Victreebel: 221
+Tentacool: 67
+Tentacruel: 180
+Geodude: 60
+Graveler: 137
+Golem: 223
+Ponyta: 82
+Rapidash: 175
+Slowpoke: 63
+Slowbro: 164
+Magnemite: 65
+Magneton: 163
+Farfetch'd: 123
+Doduo: 62
+Dodrio: 161
+Seel: 65
+Dewgong: 166
+Grimer: 65
+Muk: 169
+Shellder: 61
+Cloyster: 184
+Gastly: 62
+Haunter: 142
+Gengar: 225
+Onix: 77
+Drowzee: 66
+Hypno: 169
+Krabby: 65
+Kingler: 166
+Voltorb: 66
+Electrode: 172
+Exeggcute: 65
+Exeggutor: 186
+Cubone: 64
+Marowak: 149
+Hitmonlee: 159
+Hitmonchan: 159
+Lickitung: 77
+Koffing: 68
+Weezing: 172
+Rhyhorn: 69
+Rhydon: 171
+Chansey: 395
+Tangela: 87
+Kangaskhan: 172
+Horsea: 59
+Seadra: 154
+Goldeen: 64
+Seaking: 158
+Staryu: 68
+Starmie: 207
+Mr. Mime: 136
+Scyther: 100
+Jynx: 159
+Electabuzz: 172
+Magmar: 173
+Pinsir: 200
+Tauros: 211
+Magikarp: 40
+Gyarados: 189
+Lapras: 219
+Ditto: 61
+Eevee: 92
+Vaporeon: 196
+Jolteon: 197
+Flareon: 198
+Porygon: 130
+Omanyte: 71
+Omastar: 199
+Kabuto: 71
+Kabutops: 199
+Aerodactyl: 202
+Snorlax: 154
+Articuno: 215
+Zapdos: 216
+Moltres: 217
+Dratini: 67
+Dragonair: 144
+Dragonite: 218
+Mewtwo: 220
+Mew: 220
+
+
+
+Fast Level Group:
+
+Level 1-45: Decreases by approximately 0.0444% per level.
+Level 46-100: Decreases by approximately 0.5578% per level.
+
+Medium-Fast Level Group:
+
+Level 1-50: No change, remains at 100%.
+Level 51-100: Decreases by approximately 0.4583% per level.
+
+Medium-Slow Level Group:
+
+Level 1-50: Increases by approximately 0.424% per level.
+Level 51-100: Increases by approximately 0.335% per level.
+
+Slow Level Group:
+
+Level 1-50: Increases by approximately 0.024% per level.
+Level 51-100: Increases by approximately 0.18% per level.
