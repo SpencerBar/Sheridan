@@ -16,8 +16,13 @@ public class Monster {
     private final int SpDEF;
     private final int Spe;
     private final HashMap<String,Float> effect;
+    private int currentHP;
+    private int level;
+    //private int exp;
+    private LevelGroup levelGroup;
 
-    public Monster(MonsterSpecies newMon){
+    public Monster(MonsterSpecies newMon,int level){
+    
     this.number = newMon.getNumber();
     this.id =getID(number, idgen);  
     this.type1= newMon.getType1();
@@ -30,6 +35,10 @@ public class Monster {
     this.SpDEF = newMon.getBaseSpDEF()+ getIv();
     this.Spe = newMon.getBaseSPE()+ getIv();
     this.effect = newMon.getEffect();
+    this.currentHP = HP;
+    this.level = level;
+    this.levelGroup = newMon.getLevelGroup();
+    //this.exp = ned to account for exp at level and level group
 
 
     }
