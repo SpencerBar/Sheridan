@@ -15,9 +15,6 @@ def retrieveSubId(regionName, availZone):
         ]
     )
     return response['Subnets'][0]['SubnetId']
-     
-
-
 
 
 #create volume and attatch it
