@@ -4,12 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms - With Dr. Abstract</title>
+    <style>
+        body {font-family: Verdana, Geneva, Tahoma, sans-serif;}
+        td {
+            background-color: #ddd;
+            padding:10px;
+            border-radius: 5px;
+        }
+        td:first-child{text-align:right;}
+        textarea{width:400px; height:200px;}
+        .divider {background-color: rgb(255,215,139)!important;font-style:italic; text-decoration:underline; text-align: center !important;}
+    </style>
 </head>
 <body>
     <form action="results.html" method="get">
-
-        <input name="title" type="text">
-
+    <!-- <form action="results.html" method="post"> --> <!--this is for hiding the data-->
+<table>
+<tr>
+    <td>Enter Title</td>
+    <td><input name="title" id="title" value="" type="text" required autocomplete></td>
+</tr>
+<tr>
+    <td>Is it sunny?</td>
+    <td><input name="sunny" type="checkbox"></td>
+     
+</tr>
+<input name="day" type="hidden" value="tue">
+<tr>
+    <td>How hungy are you</td>
+    <td><input name="hungy" type="radio" value ="satiated">Satiated
+        <input name="hungy" type="radio" value ="neutral">Neutral
+        <input name="hungy" type="radio" value ="very">Very
+    </td> 
+</tr> 
+<tr>
+    <td>Time of Day</td>
+    <td><select name="T.O.D." size="6" multiple id="time">
+        <option>Breakfest</option>
+        <option>Brunch</option>
+        <option>Lunch</option>
+        <option>Tea Time</option>
+        <option>Dinner</option>
+        <option>Dessert</option>
+    </select>
+    </td>
+</tr>
+<tr>
+    <td>Describe your mood</td>
+    <td><textarea name="Mood" placeholder="Enter Text Here"></textarea></td>
+</tr>
+<tr>
+    <td>Fave city?</td>
+    <td><textarea name="city" type="text" list="cities"></textarea></td>
+</tr>
+<datalist>
+    <option value="">Toronto</option>
+    <option value="">Toronto</option>
+    <option value="">Toronto</option>
+    <option value="">Toronto</option>
+</datalist>
+<tr>
+    
+    <td class=divider colspan="2">HTML 5 Inputs</td>
+    
+</tr>
+<tr>
+    <td>What was your Grade?</td>
+    <td><input type="number" min="0" max="100"></td>
+</tr>
+<tr>
+    <td>How happy are you?</td>
+    <td><input name="happy" type="range" value="50" steps="5" min="0" max="100"></td>
+    
+</tr>
+<tr>
+    <td>What color is your shirt?</td>
+    <td><input name="color" type="color"></td>
+    
+</tr>
+<tr>
+    <td>When is your birthday?</td>
+    <td><input name="birthday" type="date"></td>
+    
+</tr>
+<tr>
+    <td></td>
+    <td><input type="Submit" value="Submit"></td>
+    
+</tr>
+</table>       
     </form>
 </body>
 </html>
