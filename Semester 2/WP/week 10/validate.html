@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        #test {
+            background-color: green;
+            color: white;
+            
+        }
+        #test:invalid{
+            background-color: red;
+            color:white;
+            
+        }
+        #error {
+            display:none;
+            background-color: yellow;
+            padding:5px;
+            box-shadow: rgba(0,0,0,.2) 5px 5px 10px;
+            border-radius: 5cm;
+            
+        }
+        
+    </style>
+    <script>
+        window.addEventListener("DOMContentLoaded",()=>{
+            const survey = document.getElementById("survey");
+            const error = document.getElementById("error");
+
+            survey.addEventListener("submit",e=>{
+
+                const test = document.getElementById("test");
+                console.log(test.value);
+                if(!test.value.match(/^covfefe$/i) ){
+                    // console.log("OOPS");
+                    error.style.display = "inline-block";
+                    e.preventDefault();   
+                }
+                
+               
+            })
+            
+        
+        })
+    </script>
+</head>
+<body>
+    <form id="survey" action="validateresults.html">
+
+<!--built in html 5 validation, not perfect  -->
+        <!-- Email:<br>
+        <input type="email" required name="email">
+        <br><br>
+        URL:<br>
+        <input type="url" required name="url">
+        <br><br> -->
+
+<!-- using  patterns-->
+        <!-- Postal Code<br>
+        <input pattern="[A-Z][0-9][A-Z][\- ]?[0-9][A-Z][0-9]"  type="text" name="test" id="test">
+        <br><br>
+        March Date<br>
+        <input pattern="03([1-2][0-9])|([3][01])[/d*]"  type="date" name="date" id="test">
+        <br><br>
+        Certain Amount<br>
+        <input pattern="[a-zA-Z]{4,8}"  type="text" name="test" id="test">
+        <br><br>
+        Anything But<br>
+        <input pattern="[^a-zA-Z]*"  type="text" name="test" id="test">
+        <br><br> -->
+    <!-- using scripts -->
+        Script<br>
+        <input type="text" name="test" id="test">
+        <br><br>
+        <input type="text" name="type" placeholder="Type of Covfefe" id="nottest">
+        
+        
+        <div id="error">Error: Enter Covfefe!</div>
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

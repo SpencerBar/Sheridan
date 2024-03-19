@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage and JSON</title>
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+        const welcome = document.getElementById("welcome")
+        
+        const array = {b: [1,2,3,{a:10}]};
+        console.log(JSON.stringify(array));
+        if(localStorage){
+            localStorage.test = JSON.stringify(array);
+            const array2 = JSON.parse(localStorage.test);
+            console.log(array2.b[3].a);
+        }
+        
+        if(localStorage && localStorage.name){
+            welcome.innerText = "Welcome " + localStorage.name
+        }
+        const survey = document.getElementById("survey");
+        survey.addEventListener("submit", e=>{
+
+            const name = document.getElementById("name");
+          
+            console.log(name.value);
+            if(localStorage) 
+            {localStorage.name = name.value
+            welcome.innerText = "Welcome " + localStorage.name
+            console.log("localStorage"+localStorage.name)};
+                
+              
+        })
+    })
+
+</script>
+</head>
+<body>
+    <h1 id="welcome">Welcome</h1>
+    <form id="survey" action="">
+
+        <input type="text" id="name" placeholder="Enter Name">
+        <br><br>
+        <input type="submit" id="submit">
+    </form>
+    
+</body>
+</html>
