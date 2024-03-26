@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Form</title>
+    <style>
+       body{
+        background-color: antiquewhite;
+        margin-left: 10%;
+        margin-right: 10%;
+        }
+        .container{
+            display:flex;
+            background-color:rgb(209, 129, 24);
+          
+        }
+        h1 {
+            color:aliceblue;
+            background-color:darkcyan;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 10px
+        }
+
+        ::placeholder {
+            color:black;
+        }
+        
+        .main-content {
+            background-color: white;
+            padding:5%;
+            padding-top:1px;
+           
+            }
+        
+
+    </style>
+    <script>
+       
+            function showPlayers() {
+            document.getElementById('playerCount').style.display = 'block';
+        }
+        function hidePlayers() {
+            document.getElementById('playerCount').style.display = 'none';
+        }
+        function updatePlayerCountDisplay(value) {
+            document.getElementById('playerCountValue').textContent = value;
+        }
+        
+    </script>
+</head>
+<body>
+   
+        
+        
+    <div class="main-content">
+            
+        
+    <h1>Game Review!</h1>
+
+    <input type="text" placeholder="Enter Game Title">
+
+    <br><br>
+
+    <input type="checkbox">Did you like it?
+
+    <br><br>
+
+    <input id="comments" type="text" placeholder="What Stood Out?">
+
+    <br><br>
+
+    Story
+    <br>
+    <input type="radio" name="story">1
+    <input type="radio" name="story">2
+    <input type="radio" name="story">3
+    <input type="radio" name="story">4
+    <input type="radio" name="story">5
+
+    <br><br>
+
+    Graphics
+    <br>
+    <input type="radio" name="graphics">1
+    <input type="radio" name="graphics">2
+    <input type="radio" name="graphics">3
+    <input type="radio" name="graphics">4
+    <input type="radio" name="graphics">5
+
+    <br><br>
+
+    Gameplay
+    <br>
+    <input type="radio" name="gameplay">1
+    <input type="radio" name="gameplay">2
+    <input type="radio" name="gameplay">3
+    <input type="radio" name="gameplay">4
+    <input type="radio" name="gameplay">5
+
+    <br><br>
+    Sound
+    <br>
+    <input type="radio" name="sound">1
+    <input type="radio" name="sound">2
+    <input type="radio" name="sound">3
+    <input type="radio" name="sound">4
+    <input type="radio" name="sound">5
+
+    <br><br>
+
+    X-Factor
+    <br>
+    <input type="radio" name="x-factor">1
+    <input type="radio" name="x-factor">2
+    <input type="radio" name="x-factor">3
+    <input type="radio" name="x-factor">4
+    <input type="radio" name="x-factor">5
+
+    <br><br>
+    Is it multiplayer?
+    <br>
+    <input type="radio" name="yesno" onclick="showPlayers()">Yes
+    <input type="radio" name="yesno" onclick="hidePlayers()">No
+    <br><br>
+    <div id="playerCount" style="display:none">
+        How many players?<br>
+        <input type="range" name="playerCount" min="2" max="10" onchange="updatePlayerCountDisplay(this.value)">
+        <span id="playerCountValue">6</span>
+        
+        <br><br>
+    </div>
+
+    Which platforms is it available on?
+    <br>
+        <input type="checkbox" value="PC">PC</input>
+        <input type="checkbox" value="PS4">PS4</input>
+        <input type="checkbox" value="PS5">PS5</input>
+        <input type="checkbox" value="XBONE">XBONE</input>
+        <input type="checkbox" value="XB360">XB360</input>
+        <input type="checkbox" value="SWITCH">SWITCH</input>
+ <br><br>
+
+    <input type="submit">
+    
+    </div>
+    
+</body>
+</html>
