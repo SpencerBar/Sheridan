@@ -14,9 +14,11 @@ public class Heart {
         this.bpm = bpm;
     }
     public void oneMinute(){
+        String heartbeatLine = "";
         for (int i = 0; i < bpm; i++){
-            System.out.println(this.heartbeat);
+            heartbeatLine += this.heartbeat +" ";
+           
         }
-
+        System.out.println(heartbeatLine);
     }
 }

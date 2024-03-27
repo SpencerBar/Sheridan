@@ -1,9 +1,9 @@
 package a3allotherclasses;
 
 public class Person {
-    //person is  to heart
-    //person is to book
-    //person is to bookshelf
+    //person is composed of a heart (composition)
+    //a persona is associated with a book through aggregation(aggretation)
+    //person is dependant on a bookshelf (dependency)
 
     private String name;
     private Book book;

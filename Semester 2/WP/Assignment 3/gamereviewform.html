@@ -10,6 +10,11 @@
         margin-left: 10%;
         margin-right: 10%;
         }
+        .heading{
+            color:darkcyan;
+            font-weight: bold;
+            text-decoration:dotted underline 1px ;
+        }
         .container{
             display:flex;
             background-color:rgb(209, 129, 24);
@@ -27,16 +32,37 @@
             color:black;
         }
         
-        .main-content {
+        #review {
+
             background-color: white;
             padding:5%;
             padding-top:1px;
            
             }
+
+            #error {
+            background-color: red;
+            color: white;
+            display: none;
+
+            }
         
 
     </style>
     <script>
+
+         window.addEventListener("DOMContentLoaded", () => {
+          const review = document.getElementById("review");
+          review.addEventListener("submit", e => {
+            const done = document.getElementById("done");
+            if (!done.value.match(/Done/i)){
+                
+                error.style.display = "inline-block";
+                e.preventDefault();
+            }
+
+          })
+        })
        
             function showPlayers() {
             document.getElementById('playerCount').style.display = 'block';
@@ -54,97 +80,118 @@
    
         
         
-    <div class="main-content">
+    <form id="review" action="gamereviewresults.html">
             
         
     <h1>Game Review!</h1>
+    <div class="heading">Game Title</div>
+    <input name="title" type="text" placeholder="Enter Game Title" required>
+    <br><br>
+    
+    <div class="heading">Review Author</div>
+    <input name="author" type="text" placeholder="Enter Name" required>
 
-    <input type="text" placeholder="Enter Game Title">
+    <br><br>
+    <div class="heading">Did you like it?</div>
+    <input type="radio" name="like" value="yes" required>Yes
+    <input type="radio" name="like" value="no">No
+
+    <br><br>
+    <div class="heading">What did you like?</div>
+    <textarea name= "posComments" id="posComments" rows="6" required></textarea>
+
+    <br><br>
+    <div class="heading">What didn't you like?</div>
+    <textarea name= "negComments" id="negComments" rows="6" required></textarea>
 
     <br><br>
 
-    <input type="checkbox">Did you like it?
+    <div class="heading">Story</div>
+    
+    <input type="radio" name="story" value="1" required>1
+    <input type="radio" name="story" value="2">2
+    <input type="radio" name="story" value="3">3
+    <input type="radio" name="story" value="4">4
+    <input type="radio" name="story" value="5">5
 
     <br><br>
 
-    <input id="comments" type="text" placeholder="What Stood Out?">
+    <div class="heading">Graphics</div>
+    
+    <input type="radio" name="graphics" value="1" required>1
+    <input type="radio" name="graphics" value="2">2
+    <input type="radio" name="graphics" value="3">3
+    <input type="radio" name="graphics" value="4">4
+    <input type="radio" name="graphics" value="5">5
 
     <br><br>
 
-    Story
-    <br>
-    <input type="radio" name="story">1
-    <input type="radio" name="story">2
-    <input type="radio" name="story">3
-    <input type="radio" name="story">4
-    <input type="radio" name="story">5
+    <div class="heading">Gameplay</div>
+    
+    <input type="radio" name="gameplay" value="1" required>1
+    <input type="radio" name="gameplay" value="2">2
+    <input type="radio" name="gameplay" value="3">3
+    <input type="radio" name="gameplay" value="4">4
+    <input type="radio" name="gameplay" value="5">5
+
+    <br><br>
+    <div class="heading">Sound</div>
+    
+    <input type="radio" name="sound" value="1" required>1
+    <input type="radio" name="sound" value="2">2
+    <input type="radio" name="sound" value="3">3
+    <input type="radio" name="sound" value="4">4
+    <input type="radio" name="sound" value="5">5
 
     <br><br>
 
-    Graphics
-    <br>
-    <input type="radio" name="graphics">1
-    <input type="radio" name="graphics">2
-    <input type="radio" name="graphics">3
-    <input type="radio" name="graphics">4
-    <input type="radio" name="graphics">5
+    <div class="heading">X-Factor</div>
+    
+    <input type="radio" name="xfactor" value="1" required>1
+    <input type="radio" name="xfactor" value="2">2
+    <input type="radio" name="xfactor" value="3">3
+    <input type="radio" name="xfactor" value="4">4
+    <input type="radio" name="xfactor" value="5">5
 
     <br><br>
-
-    Gameplay
-    <br>
-    <input type="radio" name="gameplay">1
-    <input type="radio" name="gameplay">2
-    <input type="radio" name="gameplay">3
-    <input type="radio" name="gameplay">4
-    <input type="radio" name="gameplay">5
-
-    <br><br>
-    Sound
-    <br>
-    <input type="radio" name="sound">1
-    <input type="radio" name="sound">2
-    <input type="radio" name="sound">3
-    <input type="radio" name="sound">4
-    <input type="radio" name="sound">5
-
-    <br><br>
-
-    X-Factor
-    <br>
-    <input type="radio" name="x-factor">1
-    <input type="radio" name="x-factor">2
-    <input type="radio" name="x-factor">3
-    <input type="radio" name="x-factor">4
-    <input type="radio" name="x-factor">5
-
-    <br><br>
-    Is it multiplayer?
-    <br>
-    <input type="radio" name="yesno" onclick="showPlayers()">Yes
-    <input type="radio" name="yesno" onclick="hidePlayers()">No
+    <div class="heading">Is it multiplayer?</div>
+    <input type="radio" name="multiplayer" onclick="showPlayers()" value="yes" required>Yes
+    <input type="radio" name="multiplayer" onclick="hidePlayers()" value="no">No
     <br><br>
     <div id="playerCount" style="display:none">
-        How many players?<br>
+        <div class="heading">How many players?</div>
         <input type="range" name="playerCount" min="2" max="10" onchange="updatePlayerCountDisplay(this.value)">
         <span id="playerCountValue">6</span>
         
         <br><br>
     </div>
 
-    Which platforms is it available on?
-    <br>
-        <input type="checkbox" value="PC">PC</input>
-        <input type="checkbox" value="PS4">PS4</input>
-        <input type="checkbox" value="PS5">PS5</input>
-        <input type="checkbox" value="XBONE">XBONE</input>
-        <input type="checkbox" value="XB360">XB360</input>
-        <input type="checkbox" value="SWITCH">SWITCH</input>
- <br><br>
+    <div class="heading">Which platforms is it available on?</div>
 
-    <input type="submit">
+        <input name="platform" id="pc" type="checkbox" value="PC" required>PC</textarea>
+        <input name="platform" id="ps4" type="checkbox" value="PS4">PS4</input>
+        <input name="platform" id="ps5" type="checkbox" value="PS5">PS5</input>
+        <input name="platform" id="xb1" type="checkbox" value="XBONE">XBONE</input>
+        <input name="platform" id="xb360" type="checkbox" value="XB360">XB360</input>
+        <input name="platform" id="sw" type="checkbox" value="SWITCH">SWITCH</input>
+ <br><br>
+        <div class="heading">Enter review date:</div>
+        <input name="rDate" id="date" type="date" required>
+        <br><br>
+    <input id="done" type="text" placeholder="Type 'Done' to Submit" required>
+        
+        <br><br>
+       
+
+        <input type="submit" id="finished">
+
+        <br><br>
+
+        <div id="error">!!!!Wrong Word Dummy!!!!</div>
+
+        </div>
     
-    </div>
+</form>
     
 </body>
 </html>
