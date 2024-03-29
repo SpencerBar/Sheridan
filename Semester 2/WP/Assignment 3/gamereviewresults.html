@@ -34,7 +34,7 @@
 
         body {
             background: antiquewhite;
-            padding: 20px 20px 10px
+            padding: 1% 10% 1%;
         }
 
         #form {
@@ -50,6 +50,25 @@
             font-size:30px;
         }
 
+#lBanner {
+    position: absolute;
+    left: 0;
+    width: 10%; 
+}
+
+#rBanner {
+    position: absolute;
+    right: 0;
+    width: 10%; 
+}
+#lBanner img {
+    width: 100%; 
+}
+
+#rBanner img {
+    width: 100%; 
+}
+
         
         
     </style>
@@ -57,14 +76,15 @@
        window.addEventListener("DOMContentLoaded", ()=>{
         const gRev = document.getElementById("review")
         const searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.get("title") != null)
+        {
         // importing all the url stuff 
             localStorage.gTitle = searchParams.get("title");
             localStorage.author = searchParams.get("author");
             localStorage.like = searchParams.get("like");
             localStorage.posComments = searchParams.get("posComments");
             localStorage.negComments = searchParams.get("negComments");
-        //setting title
-            document.title = localStorage.gTitle + " Review"
+        
         //multiplayer/player count
             localStorage.multiplayer = searchParams.get("multiplayer");
             if(localStorage.multiplayer == "yes")
@@ -85,7 +105,9 @@
             localStorage.xfactor = searchParams.get("xfactor");
 
             localStorage.Rdate = searchParams.get("rDate");
-        
+        }
+        //setting title
+        document.title = localStorage.gTitle + " Review"
         //header
         document.getElementById("gTitle").textContent = localStorage.gTitle + " Game Review";
         document.getElementById("author").textContent ="By: " + localStorage.author;
@@ -131,7 +153,8 @@
     <div id="form">
         <div id="gTitle"></div>
         <div id="author"></div><div id="date"></div><br>
-
+        <div id ="lBanner"><a href="/PowerClicker.html"><img src="assets\Banner.png"></a></div>
+        <div id ="rBanner"><a href="/PowerClicker.html"><img src="assets\Banner.png"></a></div>
         <h3>Game Info</h3>
             
             <div class="heading" id="platform"></div>

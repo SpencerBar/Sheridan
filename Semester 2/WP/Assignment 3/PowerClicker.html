@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Power Clicker</title>
+
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+
+
+
+const assets = ["explode.png", "lightning.png", "thunder.wav","energy.png", "powerbg2.png"];
+
+
+new Frame(FIT, 1024, 768, interstellar, dark, ready, assets, "assets/");
+
+// new variables
+let watts = 0;
+let setBoosterOn = false;
+let wattsPerClick = 1;
+let clickerPrice = 1000;
+let wattsPerSec = 0;
+
+function ready() {
+
+    const backing = new Pic("powerbg2.png").scaleTo().alp(.75).center();
+    const lightningEffect = new Sprite("explode.png",11).reg(CENTER);
+    const thunder = new Aud("thunder.wav");
+    
+    
+    const lightning =  new Container(W,H).addTo();
+   // spawn lightnings
+    interval({min: 10, max: 14}, () => {
+       zog("Dropping Booster");
+       new Pic("lightning.png")
+       .sca(.2)
+        .reg(CENTER)
+        .loc(Math.random() * W, -100, lightnings)
+        .animate({y:H + 100}, 6, "linear", lightningget => { lightningget.dispose();
+        }); 
+        S.update();
+    }, undefined, true); 
+
+    //render battery pod
+    const battery = new Pic("energy.png")
+        .reg(CENTER)
+        .sca(.4)
+        .pos(0, 10, CENTER, CENTER);// 0 from center, 50 from bottom
+    const lightnings = new Container(W, H).addTo();
+
+
+//explode lightnings and add watts/ booster
+    Ticker.add(() => {
+        
+        lightnings.loop(lightning => {
+            lightning.on("mousedown",()=>{
+                thunder.play();
+                lightningEffect.loc(lightning).run();
+                lightning.dispose();
+                setBoosterOn = true;
+                watts += 10;
+                
+        if (setBoosterOn){
+            wattsPerClick = 2;
+            wattsLabel.dispose();
+            wattsLabel = new Label(watts + " watts", 60, null, yellow).pos(0,200, CENTER);
+            }
+        })
+        
+        }, true);
+    })
+    // reset booster periodically
+    interval({min:100, max:400}, () =>{
+                setBoosterOn = false
+                wattsPerClick = 1;
+                console.log("reset booster")
+                })
+
+    // add clicks per second to watts from bought clickers
+    interval(1,() =>{
+        if (wattsPerSec > 0){
+            new Emitter(new Label(wattsPerClick * wattsPerSec,30,null, yellow).reg(CENTER)).spurt(1)
+            .center();
+            watts += wattsPerSec * wattsPerClick;
+            wattsLabel.dispose();
+            wattsLabel = new Label(watts + " watts", 60, null, yellow).pos(0,200, CENTER);
+    }
+    })
+
+    let wattsLabel = new Label(watts + " watts", 60, null, yellow ).pos(0,200, CENTER);
+    battery.on("mousedown",() =>{
+        new Emitter(new Label(wattsPerClick,30,null, yellow).reg(CENTER)).spurt(1,1)
+        .center();
+        Throb(battery, .42,.07);
+        wattsLabel.dispose();
+        watts += wattsPerClick;
+        //console.log(watts);
+        wattsLabel = new Label(watts + " watts", 60, null, yellow).pos(0,200, CENTER);
+        S.update()
+        })
+       
+    
+    new Label("Power Clicker", 80, null, yellow).pos(20,20, CENTER);
+    let buyClicker = new Label("Buy Clicker - " + clickerPrice, 30, null, white).pos(-100, 0,RIGHT, CENTER).reg(CENTER);
+    
+// checks if you have enough watts and if so purchases an autoclicker
+    
+    buyClicker.on("mousedown",() =>{
+        Throb(buyClicker, 1.1, .07);   
+        if (watts >= clickerPrice){
+            watts -= clickerPrice;
+            wattsLabel.dispose();
+            wattsLabel = new Label(watts + " watts", 60, null, yellow).pos(0,200, CENTER);
+            wattsPerSec += 1;
+        }
+        else{
+            new Emitter(new Label("Not enough",20,null, red).reg(CENTER)).spurt(1)
+            .center(buyClicker);
+        }
+        
+    })
+    // pulses objects
+    function Throb(obJ,scaL,timE){
+        obJ.animate({
+            props:{scale:scaL},
+            time:timE,
+            rewind: true    
+        });
+       
+    }
+} // end ready
+
+
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>
