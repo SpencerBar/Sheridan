@@ -1,0 +1,30 @@
+{
+  "name": "zodiac",
+  "version": "1.0.0",
+  "description": "chinese zodiac animals",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "animal",
+    "zodiac"
+  ],
+  "author": "SpencerBar",
+  "license": "ISC",
+  "dependencies": {
+    "better-random-words": "^1.0.0",
+    "check-dictionary-word": "^1.1.0",
+    "chinese-year": "^1.0.9",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "figlet": "^1.7.0",
+    "random-words": "^2.0.1",
+    "scrabble": "^1.0.13",
+    "wordlist": "^0.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
