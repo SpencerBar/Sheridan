@@ -1,0 +1,750 @@
+    1  ls
+    2  ls -a
+    3  ls -al
+    4  man ls
+    5  ls la /
+    6  ls -la /
+    7  cat > myfile
+    8  ls -l
+    9  cat myfile
+   10  cp myfile myfile2
+   11  mv myfile2 renamed_file
+   12  rm renamed_file
+   13  ls
+   14  ls -l
+   15  mkdir first
+   16  ls
+   17  ls -l
+   18  cd first
+   19  ../
+   20  cs /
+   21  cd ~
+   22  cd /
+   23  cd ~
+   24  pwd
+   25  cd /home/oa-adminhome1/24/sajadi
+   26  cp myfile first/newfile
+   27  cd first
+   28  ls
+   29  cat newfile
+   30  cd
+   31  cd frist
+   32  cd first
+   33  rm newfile
+   34  ls
+   35  cd
+   36  rmdir first
+   37  ls
+   38  mkdir first
+   39  cp myfile first/newfile
+   40  man man
+   41  man 6
+   42  man -s6
+   43  man -s6 games
+   44  man -k games
+   45  man -s6 intro
+   46  lshw
+   47  whoami
+   48  cal
+   49  EOF
+   50  who
+   51  mesg y
+   52  man mesg
+   53  alias myls='ls -la /
+   54  myls
+   55  alias myls='ls -la 
+   56  alias
+   57  unalias myls
+   58  alias myls='ls -la'
+   59  myls
+   60  logout
+   61  ls /lib
+   62  ls /usr/lib
+   63  file /bin/ls
+   64  echo $HOME
+   65  echo $~
+   66  echo "cat myfile"
+   67  mkdir -p lab1/sub1 lab2/sub2
+   68  ls
+   69  cat -p names.txt lab1/sub1/file1.txt lab2/sub2/file2.txt
+   70  man cat
+   71  cat names.txt
+   72  cat names.txt Hello
+   73  cat > names.txt
+   74  cat > /lab1/sub1/file1.txt
+   75  cat > file1.txt
+   76  cat > file2.txt
+   77  cat file1.txt file2.txt
+   78  mv names.txt new-names.txt
+   79  ls
+   80  mv file1.txt file2.txt /lab2/sub2/
+   81  mv file1.txt file2.txt lab2/sub2/
+   82  ls
+   83  cp lab2/sub2/file1.txt lab2/sub2/file2.txt lab1/sub1/
+   84  ls -la
+   85  ls -al
+   86  tree
+   87  history > myhistory.txt
+   88  whereis history
+   89  man history
+   90  history
+   91  echo $PATH
+   92  echo $SHELL
+   93  ls
+   94  echo cat myfile
+   95  cat myfile
+   96  echo $cat myfile
+   97  ttt
+   98  PATH=~:$PATH
+   99  echo $PATH
+  100  echo $SHELL
+  101  whereis sh
+  102  whereis zsh
+  103  tsch
+  104  apt install tcsh
+  105  tcsh
+  106  exit
+  107  logout
+  108  ls
+  109  wget myhistory.txt
+  110  man
+  111  man man
+  112  exit
+  113  rmdir lab1
+  114  tree
+  115  rm file1.txt file2.txt sub1 lab1
+  116  rm -r lab1
+  117  ls
+  118  history
+  119  exit
+  120  history
+  121  history > myhistory.txt
+  122  get myhistory.txt
+  123  exit
+  124  clear
+  125  tty
+  126  nano
+  127  vim
+  128  nano
+  129  fg
+  130  vim
+  131  lf
+  132  ls
+  133  vim myvimfile.txt
+  134  mail -s "this is a test: srdb_45@live.com
+  135  LETSSSS GOOOOOOOOOOOOOOOOOOOOO
+  136  its a TRAAAAP
+  137  mail -s "this is a test: srdb_45@live.com
+  138  LETSSSS GOOOOOOOOOOOOOOOOOOOOO
+  139  its a TRAAAAP
+  140  mail -s "this is a test: srdb_45@live.com
+  141  ETSSSS GOOOOOOOOOOOOOOOOOOOOO
+  142  its a TRAAAAP
+  143  mail -s "this is a test: srdb_45@live.com
+  144  LETSSSS GOOOOOOOOOOOOOOOOOOOOO
+  145  its a TRAAAAP
+  146  erogneonrg
+  147  mail -s "this is a test: srdb_45@live.com
+  148  mail -s "this is a test: srdb_45@live.com < myhistory.txt
+  149  mail -s "this is a test" srdb_45@live.com < myhistory.txt
+  150  mail -s "defs not spam" victoriamousseau@hotmail.ca
+  151  ls
+  152  ls -R my
+  153  ls -R ./my
+  154  ls -R first/
+  155  ls -R first/new
+  156  ls -R first/new*
+  157  ls -l
+  158  ls /bin
+  159  ls -l /bin
+  160  ls -l /
+  161  tty
+  162  ls - l /dev/pts/23
+  163  ls -l /dev/pts/23
+  164  who
+  165  ls -l /dev | less
+  166  ls -lR /* | grep "^p"
+  167  pwd
+  168  cd /bin
+  169  pwd
+  170  ~
+  171  cd ~
+  172  ls ~
+  173  cd /bin
+  174  ls .
+  175  ls ./rm
+  176  ls
+  177  ls/ping4
+  178  ls ./ping4
+  179  cd ~
+  180  cd /course/tests/
+  181  ls -l /tmp
+  182  ls..
+  183  ls ../labs/
+  184  tree
+  185  ls ../lab2/
+  186  ls ../lab2/sub2
+  187  ls ../lab2/sub2/
+  188  cp ../lab2/sub2/file1.txt ../first
+  189  cp ~/lab2/sub2/file1.txt ../first
+  190  cp ~/lab2/sub2/file1.txt ../first/file1.txt
+  191  cp ~/lab2/sub2/file1.txt ../file.txt
+  192  cp ~/lab2/sub2/file1.txt ..file.txt
+  193  ls
+  194  tree
+  195  cp ~/lab2/sub2/file1.txt ./file.txt
+  196  tree
+  197  cp ~/lab2/sub2/file1.txt ./first/file.txt
+  198  tree
+  199  cat file.txt
+  200  mkdir mydir
+  201  ls -la mydir
+  202  ls -lai mydir
+  203  ls -laid
+  204  ls -F /
+  205  file /bin/zcat
+  206  file /bin/ls
+  207  cat /bin/zcat
+  208  hd /bin/ls
+  209  id
+  210  stat~
+  211  stat ~
+  212  ls -l /dev | less
+  213  ls -lR /* 2> /dev/null
+  214  qexit
+  215  clear
+  216  ls -lR /* 2> /dev/null | less
+  217  exit
+  218  ls -al
+  219  rm - r lab2
+  220  rmdir -r lab2
+  221  rmdir lab2
+  222  rmdir -r /lab2
+  223  rm - r /lab2
+  224  cd lab2
+  225  ls
+  226  rmdir sub2
+  227  cs sub2
+  228  cd sub2
+  229  cd ~
+  230  rm -r lab2
+  231  ls
+  232  rm -r first
+  233  rm file.txt
+  234  rm myfile
+  235  rm myvimfile.txt
+  236  rm new-names.txt
+  237  rm myhistory.txt
+  238  ls
+  239  tree
+  240  rm mydir
+  241  rmdir mydir
+  242  list
+  243  ls
+  244  mkdir layer1
+  245  mkdir /layer1 layer2
+  246  mkdir layer2 /layer1
+  247  mkdir /layer1/l
+  248  mkdir -p layer2 /layer1
+  249  tree
+  250  rmdir layer2
+  251  tree
+  252  mkdir -p layer1/layer2
+  253  tree
+  254  mkdir -p layer1/layer2/layer3/layer4
+  255  tree
+  256  touch -p layer1/layer2/layer3/layer4 file{1-9}.txt
+  257  touch layer1/layer2/layer3/layer4 file{1-9}.txt
+  258  rm file{1-9}
+  259  rm file{1-9}.txt
+  260  touch layer1/layer2/layer3/layer4/file{1..9}.txt
+  261  tree
+  262  rm layer1/layer2/layer3/layer4/file{1..9}.txt
+  263  tree
+  264  touch layer1/layer2/layer3/layer4/file{1..9}4.txt
+  265  touch layer1/layer2/layer3/file{1..9}3.txt
+  266  touch layer1/layer2/file{1..9}2.txt
+  267  touch layer1/file{1..9}1.txt
+  268  touch file{1..9}r.txt"
+  269  tree
+  270  ls 'file{1-9}r.txt
+  271  ls 'file{1-9}r.txt'
+  272  ls 'file[1-9].txt'
+  273  ls 'file[1-9]r.txt'
+  274  ls file[1-9]r.txt
+  275  ls file[1-9]*.txt
+  276  ls file[1-9]?.txt
+  277  ls -al file[1-9]?.txt
+  278  ls /* file[1-9]?.txt
+  279  ls /~/* file[1-9]?.txt
+  280  ls ~/* file[1-9]?.txt
+  281  ls ~/*  ~/*/*file[1-9]?.txt
+  282  ls ~/*  ~/*/* file[1-9]?.txt
+  283  ls ~/*[1-4] file[1-9]?.txt
+  284  ls -R file[1-9]?.txt
+  285  ls -R ~/* file[1-9]?.txt
+  286  Use “mail” command to send an email to yourself. Your email should have the subject and aecho "Hello it's me yourself from the past" | mail -s "Here is the subject" barnessp@shernet.sheridan.ca
+  287  body massage. You might use Google or the “man” command for finding the right command
+  288  format. Take a screenshot which shows the email successfully is sent and received.
+  289  \echo "Hello it's me yourself from the past" | mail -s "Here is the subject" barnessp@shernet.sheridan.ca
+  290  clear
+  291  echo "Hello it's me yourself from the past" | mail -s "Here is the subject" barnessp@shernet.sheridan.ca
+  292  whoami
+  293  echo "Hello it's me yourself from the past" | mail -s "Here is the subject" barnessp
+  294  alias mailme='| mail -s "Here is the Subject" barnessp"'
+  295  echo " now the body can change" mailme
+  296  echo " now the body can change" | mailme
+  297  alias mailme='mail -s "Here is the Subject" barnessp"'
+  298  echo " now the body can change" | mailme
+  299  alias mailme='mail -s "Here is the Subject" barnessp"'
+  300  alias mailme='mail -s "Here is the Subject" barnessp'
+  301  echo " now the body can change" | mailme
+  302  clear
+  303  uname-a
+  304  mailme
+  305  man mail
+  306  mailme
+  307  alias mailme='mail -s "Here is the Subject" barnessp'
+  308  mailme
+  309  uname -a
+  310  ls -l /
+  311  tree
+  312  touch {a..b}{a..c}{0..2}{1v}.txttouch {a..b}{a..c}{0..2}{1v}.txt
+  313  touch {a..b}{a..c}{0..2}{1v}.txt
+  314  tree
+  315  rm -r {a..b}{a..c}{0..2}{1v}.txttouch
+  316  tree
+  317  rm -r {a..b}{a..c}{0..2}{1v}.txt
+  318  touch {a..b}{a..c}{0..2}{1..v}.txt
+  319  ls ??[0-9]*.txt
+  320  tree
+  321  rm -r {a..b}{a..c}{0..2}{1..v}.txt
+  322  touch {a..b}{a..c}{0..2}{1..3}.txt
+  323  tree
+  324  ls ??[0-9]*.txt
+  325  touch {man, he}_{1..9}.mp3
+  326  tree
+  327  rm {man, he}_{1..9}.mp3
+  328  tree
+  329  rm -r {a..b}{a..c}{0..2}{1..3}.txt
+  330  tree
+  331  touch {man, he}_{1..9}.mp3
+  332  tree
+  333  rm {man, he}_{1..9}.mp3
+  334  touch [man, he]_{1..9}.mp3
+  335  tree
+  336  touch man_{1..9}.mp3
+  337  tree
+  338  rm {man, he}_{1..9}.mp3
+  339  tree
+  340  rm [man, he]_{1..9}.mp3
+  341  tree
+  342  ls man*.mp3
+  343  rm -r man_{1..9}.mp3
+  344  tree
+  345  touch [a-z][a-z][a-z]test[1-5][1-9].txt
+  346  tree
+  347  touch {a-z}{a-z}{a-z}test{1-5}{1-9}.txt
+  348  tree
+  349  rm {a-z}{a-z}{a-z}test{1-5}{1-9}.txt
+  350  rm [a-z][a-z][a-z]test[1-5][1-9].txt
+  351  touch a_test00.txt abcdtest01.txt a2_test78.txt
+  352  ls *test[0-9][0-9].txt
+  353  touch man_{1..9}.mp3
+  354  touch {a..b}{a..c}{0..2}{1..3}.txt
+  355  tree
+  356  mkdir assignment1.c && mv ??[0-9]*.txt man*.mp3 *test[0-9][0-9].txt assignment1.c/
+  357  mv ??[0-9]*.txt man*.mp3 *test[0-9][0-9].txt assignment1.c/
+  358  tree
+  359  exit
+  360  tree
+  361  rmdir -r layer1
+  362  rm -r layer1
+  363  tree
+  364  rm -r assignment1
+  365  rm -r assignment1.c
+  366  tree
+  367  rm -r file*
+  368  tree
+  369  cat cars.csv
+  370  cat cars.ms
+  371  cat cars.ss
+  372  cat cars.tab
+  373  cat -A cars.ms
+  374  cat -A cars.tab
+  375  clear
+  376  grep ford cards.ss
+  377  grep ford card\s.ss
+  378  grep ford cars.ss
+  379  grep ^f cars.ss
+  380  grep ^c cars.ss
+  381  grep -iv ^c cars.*
+  382  grep "^f|^v" cars.*
+  383  grep "^f|^v" cars.ss
+  384  egrep "^f|^v" cars.ss
+  385  grep "[^0]0$" cars.ss
+  386  grep "^v.*[^0]0$" cars.ss
+  387  sed '1,5d' cars.ss > cars1.ss
+  388  tree
+  389  cat cars1.ss
+  390  cat cars.ss8
+  391  sed 's/\(00\)+/*/g 
+  392  sed 's/\(00\)+/*/g cars.*
+  393  sed "
+  394  sed 's/\(00\)+/*/g' cars.*
+  395  sed 's/\(^[a-z]\)/\U\1/" cars.ss[
+  396  sed 's/\(^[a-z]\)/\U\1/' cars.ss]
+  397  sed 's/ [0-9][0-9]/&0/' cars.ss
+  398  cat cars.ss | tr '[a-z]' '[A-Z]'
+  399  cat cars.ss
+  400  cat cars.ss | tr -s " "
+  401  cat cars.ss | tr -s " " ""
+  402  cat cars.ss | tr -s " " | tr " " ","
+  403  cat cars.ss | tr -s " " ","
+  404  cat cars.ss | tr -s " " "  "
+  405  cat cars.ss | tr -s " " "  l  "
+  406  cat cars.ss | tr -s " " ","
+  407  man sed > sed.txt
+  408  cat sed.txt
+  409  win sed.txt
+  410  vim sed.txt
+  411  grep "^s" sed.txt | wc -l
+  412  grep "^s" sed.txt | wc 
+  413  cat numbers.txt
+  414  find . -name "*,txt"
+  415  tree
+  416  find . -name "*.txt"
+  417  find / -name "*.txt" -type d 2>/dev/null
+  418  clear
+  419  cat cars.tab
+  420  cut -f1,5 cars.tab 
+  421  cut -f1-3,5 cars.tab
+  422  cut -f5 cars.tab | sort -n
+  423  cut -f1-3 cars.ss
+  424  cut -f1-3 d" "cars.ss
+  425  cut -f1-3 d" " cars.ss
+  426  cut -f1-3 -d" " cars.ss
+  427  cut -f^,$ | ls -l
+  428  cut -f^,$ -d" " | ls -l
+  429  cut -f^,$ -d" +" | ls -l
+  430  tr -s " " |cut -f^,$ -d | ls -l
+  431  tr -s " " | cut -f1,9 -d | ls -l
+  432  ls - l | tr -s " " | cut -f1,9 -d" "
+  433  ls - l
+  434  ls -l
+  435  ls -l | tr -s " " | cut -f1,9 -d" "
+  436  tr '0' '*' < cars.csv
+  437  cat cars.ss | tr '[a-z]' '[A-Z]'
+  438  exit
+  439  tree
+  440  cat phone-book.txt
+  441  grep "^s" sed.txt | wc 
+  442  ls - l | tr -s " " | cut -f1,9 -d" "
+  443  tr -s " " |cut -f^,$ -d | ls -l
+  444  grep -E "(Alex)+ phone-book.txt
+  445  grep "(Alex)+ phone-book.txt
+  446  grep "(Alex)+" phone-book.txt
+  447  grep Alex+ phone-book.txt
+  448  grep /[aA]lex/+ phone_book.txt
+  449  grep /[aA]lex/+ phone-book.txt
+  450  grep /[aA]lex/ phone-book.txt
+  451  grep "[^0]0$" cars.ss
+  452  grep "/[aA]lex/" phone-book.txt
+  453  grep "[aA]lex" phone-book.txt
+  454  |grep "2$" phone-book.txt
+  455  cut -f4 -d" " phone-book.txt
+  456  cut -f4 -d" " phone-book.txt|grep "2$" 
+  457  cut -f4 -d" " phone-book.txt|grep "2$"| cut -f1,2,3,4,5 -d" " phone-book.txt
+  458  cut -f4 -d" " phone-book.txt|grep "2$"
+  459  egrep '2[0-9]*$' phone-book.txt
+  460  cut -d' ' -f3 phone-book.txt | grep '2$' | grep -f - phone-book.txt
+  461  cut -d' ' -f4 phone-book.txt | grep '2$' | grep -f - phone-book.txt
+  462  cut -d' ' -f4 phone-book.txt | grep '2$' | grep  phone-book.txt
+  463  cut -d' ' -f4 phone-book.txt | grep '2$' | grep -f - phone-book.txt
+  464  cut -d' ' -f4 phone-book.txt | grep '2$' | grep -f 1,2,3,4,5,6,7,8 phone-book.txt
+  465  cut -d' ' -f4 phone-book.txt | grep '2$' | grep -f 12345678 phone-book.txt
+  466  cut -d' ' -f4 phone-book.txt | grep '2$' | grep -f 1,2,3,4,5,6, phone-book.txt
+  467  cut -d' ' -f4 phone-book.txt | grep '2$' | grep -f 1,2,3,4,5,6 phone-book.txt
+  468  cut -d' ' -f4 phone-book.txt | grep '2$' | grep -f 1,2,3,4,5 phone-book.txt
+  469  cut -d' ' -f4 phone-book.txt | grep '2$' | grep -f1,2,3,4,5 phone-book.txt
+  470  grep "*^3*" phone-book.txt
+  471  grep "^3" phone-book.txt
+  472  grep ^3 phone-book.txt
+  473  grep [^3] phone-book.txt
+  474  grep "[^3]" phone-book.txt
+  475  grep "*[^3]*" phone-book.txt
+  476  grep "[3]" phone-book.txt
+  477  grep "[0-9]" phone-book.txt
+  478  grep "[3]" phone-book.txt
+  479  grep -v "[3]" phone-book.txt
+  480  grep -v "[3]" phone-book.txt |cut -d" " -f1,2 
+  481  cut -d" " -f3 phone-book.txt | sort
+  482  cut -d" " -f3 phone-book.txt | sort uniq
+  483  cut -d" " -f3 phone-book.txt | sort| uniq
+  484  cut -d" " -f3 phone-book.txt | sort -n | uniq
+  485  cut -d" " -f3 phone-book.txt | sort -n
+  486  cut -d" " -f3 phone-book.txt | grep 
+  487  cut -d" " -f3 phone-book.txt | grep "905" 
+  488  cut -d" " -f3 phone-book.txt | grep "905" | grep -f - phone-book.txt
+  489  cut -d" " -f3 phone-book.txt | grep "905" | grep -f - phone-book.txt|cut -d" " -f1,2
+  490  cut -d" " -f3 phone-book.txt | grep "905" |cut -d" " -f1,2
+  491  grep "905" phone-book.txt | cut -d" " -f1,2
+  492  touch myFile
+  493  tree
+  494  chmod a+r myFile
+  495  ls -l
+  496  chmod 660 myFile
+  497  ls -l
+  498  chmod go-w myFile
+  499  ls-l
+  500  ls -l
+  501  chmod 730 myFile
+  502  ls -l
+  503  chmod 710 myFile
+  504  ls -l
+  505  mkdir myStuff
+  506  tree
+  507  chmod a+x myStuff
+  508  ls -l
+  509  chmod ug+rwx, o-rwx myStuff
+  510  chmod 770 myStuff
+  511  ls -l
+  512  chmod go-w myStuff
+  513  ls -l
+  514  chmod u+rw,ug+x myStuff
+  515  ls -l
+  516  chmod u+rw,ug+x,go-wr myStuff
+  517  ls -l
+  518  history -i > history.txt
+  519  history > history.txt
+  520  exit
+  521  bash myscript
+  522  exit
+  523  tree
+  524  unzip bash_intro.zip
+  525  tree
+  526  mkdir bash
+  527  mv *_demo bash
+  528  tree
+  529  mv *demo*  bash
+  530  tree
+  531  mv *name*  bash
+  532  tree
+  533  mv my_wc  bash
+  534  tree
+  535  rm bash_intro.zip
+  536  tree
+  537  cd bash
+  538  if_demo1
+  539  ls -l
+  540  if_demo1
+  541  cat if_demo1
+  542  ./if_demo1
+  543  echo #path
+  544  echo $path
+  545  echo $PATH
+  546  PATH=$PATH:.
+  547  vim -~/.bash/rc
+  548  vim -~/.bash_rc
+  549  vim -~/.bashrc
+  550  vim -/.bashrc
+  551  vim ~/.bashrc
+  552  ls -l
+  553  tree
+  554  ./
+  555  .
+  556  cd ./
+  557  tree
+  558  cd .
+  559  tree
+  560  cd ~
+  561  tree
+  562  sh if_demo1
+  563  cd bash
+  564  sh if_demo1
+  565  cat if_demo
+  566  cat if_demo1
+  567  tree
+  568  mkdir advancescripts
+  569  mv advancescripts.zip advancescripts
+  570  tree
+  571  unzip advancescripts.zip
+  572  cd advancescripts
+  573  unzip advancescripts.zip
+  574  tree
+  575  rm advancescripts.zip
+  576  tree
+  577  expr 5 \* 8
+  578  if [5 -lt 8]; then echo Success; fi
+  579  if [ 5 -lt 8 ]; then echo Success; fi
+  580  var1=5
+  581  expr $var1 / 3)
+  582  expr $var1 % 3
+  583  var2=$(expr $var1 % 3)
+  584  echo $?
+  585  echo $var2
+  586  cat count_demo
+  587  ./count_demo
+  588  ./count_demo 1
+  589  ./count_demo 5
+  590  ./count_demo 5 6
+  591  vim count_demo
+  592  tree
+  593  echo 3453453 | egrep "^[0-9]+$"
+  594  echo 3453453 | egrep - v "^[0-9]+$" > /dev/null
+  595  echo 3453453 | egrep -v "^[0-9]+$" > /dev/null
+  596  echo 452345 | egrep -v "^[0-9]+$" > /dev/null
+  597  echo $?
+  598  echo +452345 | egrep -v "^\+?[0-9]+$" > /dev/null
+  599  $?
+  600  echo +452345 | egrep -v "^\+?[0-9]+$" > /dev/null
+  601  $?
+  602  echo +452345 | egrep "^\+?[0-9]+$"
+  603  $?
+  604  echo +452345 | egrep -v "^\+?[0-9]+$" > /dev/null
+  605  vim count_demoexit
+  606  vim count_demo
+  607  ./count_demo 3s
+  608  vim count_demo
+  609  ./count_demo 3s
+  610  ./count_demo 3
+  611  vim count_demo
+  612  ./count_demo 3
+  613  ./count_demo 3s
+  614  vim count_demo
+  615  ./count_demo 3s
+  616  ./count_demo 3
+  617  lmfao
+  618  write pollocje@atlas bro
+  619  write pollocje@atlas 
+  620  write pollocje@atlas pts/9
+  621  cat here_demo
+  622  tree
+  623  kill -l
+  624  ./trap_demo
+  625  kill
+  626  kill%2
+  627  kill %3
+  628  kill %2
+  629  kill -9 %
+  630  kill -9 %3
+  631  ls -l /
+  632  ls -l /dev/fd
+  633  log
+  634  log_users() { echo "I'm trying to save the date and current users in a file"; echo $(date) >> current_users.txt; who .. current_users.txt; }
+  635  log_users() }
+  636  ls -l
+  637  cd ~
+  638  log_users() { echo "I'm trying to save the date and current users in a file"; echo $(date) >> current_users.txt; who .. current_users.txt; }
+  639  log_users() }
+  640  log_users()  }
+  641  set | grep log
+  642  export log_users()
+  643  log_users
+  644  exit
+  645  cd `
+  646  cd ~
+  647  ls -l
+  648  cd advancescripts
+  649  ls -l
+  650  nano filestatistics.sh
+  651  export filestatistics.sh
+  652  export filestatistics
+  653  ls -l
+  654  ./filestatistics /~
+  655  ./filestatistics /
+  656  ./filestatistics /barnessp
+  657  cwd
+  658  wd
+  659  pwd
+  660  ./filestatistics /home/oa-homer1/44/barnessp
+  661  ./filestatistics /home/oa-homer1/44/barnessp/
+  662  filestatistics ~
+  663  ./filestatistics
+  664  ./filestatistics /barnessp
+  665  export filestatistics
+  666  ls -l
+  667  ./filestatistics.sh /~
+  668  ./filestatistics.sh ~
+  669  ./filestatistics.sh ~/
+  670  chmod +x filestatistics.sh
+  671  ./filestatistics.sh ~/
+  672  nano filestatistics.sh
+  673  ./filestatistics.sh ~/
+  674  nano filestatistics.sh
+  675  ./filestatistics.sh ~/
+  676  nano filestatistics.sh
+  677  ./filestatistics.sh ~/
+  678  nano filestatistics.sh
+  679  ./filestatistics.sh ~/
+  680  nano filestatistics.sh
+  681  ./filestatistics.sh ~/
+  682  nano filestatistics.sh
+  683  ./filestatistics.sh ~/
+  684  nano filestatistics.sh
+  685  ./filestatistics.sh ~/
+  686  nano filestatistics.sh
+  687  ./filestatistics.sh ~/
+  688  nano filestatistics.sh
+  689  ./filestatistics.sh ~/
+  690  nano filestatistics.sh
+  691  ./filestatistics.sh ~/
+  692  nano filestatistics.sh\
+  693  nano filestatistics.sh
+  694  nano filestatistics.sh\
+  695  ./filestatistics.sh ~/
+  696  nano filestatistics.sh
+  697  ./filestatistics.sh ~/
+  698  nano filestatistics.sh
+  699  ./filestatistics.sh ~/
+  700  nano filestatistics.sh
+  701  ./filestatistics.sh ~/
+  702  nano filestatistics.sh
+  703  ./filestatistics.sh ~/
+  704  nano filestatistics.sh
+  705  ./filestatistics.sh ~/
+  706  nano filestatistics.sh
+  707  ./filestatistics.sh ~/
+  708  nano filestatistics.sh
+  709  ./filestatistics.sh ~/
+  710  ./filestatistics.sh ~
+  711  ./filestatistics.sh /notadir
+  712  ./filestatistics.sh
+  713  nano filestatistics.sh
+  714  ./filestatistics.sh
+  715  ./filestatistics.sh ~
+  716  nano filestatistics.sh
+  717  ./filestatistics.sh ~
+  718  nano filestatistics.sh
+  719  ./filestatistics.sh ~
+  720  nano filestatistics.sh
+  721  ./filestatistics.sh ~
+  722  nano filestatistics.sh
+  723  ./filestatistics.sh ~
+  724  nano filestatistics.sh
+  725  ./filestatistics.sh ~
+  726  nano filestatistics.sh
+  727  ./filestatistics.sh ~
+  728  nano filestatistics.sh
+  729  ./filestatistics.sh ~
+  730  nano filestatistics.sh
+  731  ./filestatistics.sh ~
+  732  nano filestatistics.sh
+  733  ./filestatistics.sh ~
+  734  nano filestatistics.sh
+  735  ./filestatistics.sh ~
+  736  nano filestatistics.sh
+  737  ./filestatistics.sh ~
+  738  exit
+  739  history > history.txt
+  740  exit
+  741  nano filestatics.sh
+  742  export filestatics.sh
+  743  export filestatics
+  744  chmod +x fielstatics.sh
+  745  chmod +x filestatics.sh
+  746  ./filestatics.sh ~
+  747  nano filestatics.sh
+  748  ./filestatics.sh ~
+  749  exit
+  750  history > history.txt

@@ -28,7 +28,7 @@ app.get("/test",(req,res)=>{
     if (Array.isArray(results)) {
         results.forEach(word => {
             if (checkword(word)) {
-                validWords.push(word + " ");
+                validWords.push( " "+ word);
             }
         });
         res.render("results", { results: validWords });
