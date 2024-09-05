@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON and Fetch()</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family:verdana;
+            font-size:30px;
+            text-align: center;    
+            background-color: #ccc;       
+            color:white    
+        }
+        form {
+            margin-top:40px;
+            border:thick white solid;
+            display:inline-block;
+            border-radius: 20px;
+            padding:20px;
+            background-color:#333;
+        }
+        input {
+            font-size:30px;
+        }         
+        #answer {
+            display:none;
+            margin:50px;
+            padding:20px;
+            background-color: #333;
+            font-style:italic
+        }
+        #warning {
+            display:none;
+            margin:50px;
+            font-size:20px;
+            background-color: orange;
+            padding:10px;
+            color:#333
+        }
+        footer {
+            margin:40px;
+            font-size:12px;
+            font-style:italic;
+            color:#888;
+        }
+
+    </style>
+
+    <script>
+
+window.addEventListener("DOMContentLoaded", ()=>{
+
+    const warning = document.getElementById("warning");
+    const answer = document.getElementById("answer");
+    const topic = document.getElementById("topic");
+
+    document.getElementById("joke").addEventListener("submit", e=>{
+        
+        const senddata = JSON.stringify({topic:topic.value});     
+        console.log(senddata);
+
+        // We want to send JSON to the server and get back a response 
+        // without loading a new page or reloading this page
+        // In the past we used AJAX (Asynchronous JavaScript and XML) 
+        // which usually we used with JSON rather than XML.
+        // This can still be used but we have a new way:
+
+        // fetch() is a JavaScript API that basically replaces AJAX 
+        // it can be used with Promises (as we have here) 
+        // or with async and await (not shown)
+
+        // fetch() is simpler when not sending JSON 
+        // it would just be fetch("getjoke").then(...).then(...)
+        // but in this case, we want to send JSON too:
+
+        fetch("getjoke", {
+            method:"POST",
+            headers: {"Content-Type": "application/json"},
+            body: senddata
+        }).then(response=>{
+            // getting a response back from the server
+            // the two then() steps is how it is done
+            // we could return response.text() if not receiving JSON
+            return response.json();
+        }).then(data=>{             
+
+            // data is the JSON from our response
+            console.log(data);
+            data = JSON.parse(data);
+
+            if (data.warning != "") {
+                warning.innerHTML = data.warning + ", but here is a joke anyway!";
+                warning.style.display = "block";
+            } else {
+                warning.style.display = "none";
+            }
+
+            answer.innerText = data.joke;
+            answer.style.display = "block";
+
+        }).catch(err=>{
+            // There was an error
+            warning.innerText = err;
+            warning.style.display = "block";
+        });
+
+        e.preventDefault(); // do not submit the form
+    
+    });
+    
+});
+
+    </script>
+</head>
+
+<body>
+
+    <form id="joke">           
+        <p>Enter Joke Topic</p>
+        <p><input  type="text" id="topic"></p>
+        <p><input type="submit" value="GET JOKE"></p>
+    </form>
+
+    <div id="warning"></div>
+    <div id="answer"></div>
+
+    <footer>We are not responsible for joke content</footer>
+
+</body>
+
+</html>

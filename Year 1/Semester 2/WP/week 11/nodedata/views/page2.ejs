@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Page 2 - Sessions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sessions.css">    
+</head>
+
+<body>
+
+    <header>
+        <h1>Page 2 - Sessions</h1>        
+    </header>
+
+    <div id="welcome">
+
+        <% if (session.username) { %>
+            <h2>Welcome, <%= session.username %>!</h2>
+        <% } else { %>
+            <h2>Welcome!</h2>
+        <% } %>
+
+    </div>
+
+    <footer>
+        <a href="page1">Page 1</a>
+    </footer>
+
+
+</body>
+
+</html>

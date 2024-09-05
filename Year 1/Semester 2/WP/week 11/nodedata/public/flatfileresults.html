@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Results - Flat File</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                font-family:verdana;
+                font-size:30px;
+                text-align: center;    
+                background-color: violet;       
+                color:white    
+            }
+            div {
+                margin-top:40px;
+                border:thick white solid;
+                display:inline-block;
+                border-radius: 20px;
+                padding:20px;
+                background-color:purple;
+            }
+            input {
+                font-size:30px;
+            }         
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="message"></div>  
+
+        <script>
+            // get the results from the query string for message
+            const message = new URLSearchParams(location.search).get("message");
+            document.getElementById("message").innerText = message;
+        </script>
+
+    </body>
+
+</html>
