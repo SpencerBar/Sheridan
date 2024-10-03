@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color:rgb(50, 50, 54);
+    color:rgb(210, 192, 169);
+    font-family:Verdana;
+}

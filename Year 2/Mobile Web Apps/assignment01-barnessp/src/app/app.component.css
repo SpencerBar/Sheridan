@@ -1,0 +1,12 @@
+body{
+    background-color:rgb(50, 50, 54);
+}
+.flexbox {
+    display:flex;
+    justify-content: center;
+}
+.flexitem {
+    flex:1 1 auto;
+    max-width: 35%;
+   
+}
