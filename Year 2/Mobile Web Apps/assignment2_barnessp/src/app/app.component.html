@@ -1,0 +1,38 @@
+
+  
+  <div class="header">
+    <div class ="title">Top Programming Languages</div>
+    <div class="chart-type">
+    <label>
+        <input type="radio" name="chartType" value="bar" [(ngModel)]="chartType">
+        Bar
+    </label>
+    <label>
+        <input type="radio" name="chartType" value="pie" [(ngModel)]="chartType">
+        Pie
+    </label>
+  </div>
+  <button (click)="info.open()">Info</button>
+</div>
+<app-info #info></app-info>
+
+<div class="flexblock">
+  <div class="col1"> 
+    <table>
+      <th>Language</th>
+      <th>Percent</th>
+      @for(l of languages; track $index) { 
+      <tr>
+        <td>{{ l.language }}</td>
+        <td>{{ l.percent }}%</td>
+      </tr>
+      
+      }
+  </table>
+</div>
+
+    <div class="col2">
+      <canvas baseChart [data]="chartData" [type]="chartType" [options]="chartOptions"></canvas>
+    </div>
+</div>
+<footer><a href="mailto:barnessp@sheridancollege.ca">©2024, Spencer Barnes</a></footer>

@@ -1,0 +1,59 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: darkcyan;
+    color: white;
+    max-height: 200px;
+    padding: 10px;
+    position: relative;
+}
+.title {
+    flex: 1;
+    text-align: center; 
+}
+
+.chart-type {
+    display: flex;
+    justify-content: flex-end; }
+
+
+footer {
+    display:flex;
+    text-align: center;
+    background-color: darkslategray;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+a{text-decoration: none;
+color:darkgrey
+}
+table{
+    display: wrap;
+    width: 100%;
+    border-collapse: collapse;
+}
+tr:nth-child(odd) {
+    background-color: #f9f9f9; 
+}
+th {
+    background-color: rgb(170, 170, 172);
+}
+.flexblock {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+.col1{
+    flex: 1 1 0;
+    min-width: 400px;
+}
+.col2 {
+    flex: 1 1 0;
+    min-width: 400px;
+    height: 500px;
+}
+
