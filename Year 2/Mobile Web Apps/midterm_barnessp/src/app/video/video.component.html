@@ -1,0 +1,20 @@
+<!-- barnessp 991728219 -->
+<div>
+    <div>
+        Title: <strong>{{video.title}}</strong>
+    </div>
+    <div>
+        <a [href]="video.url">{{video.location}}</a>
+    </div>
+    <div>
+        Dimension:{{video.width}} {{video.height}}
+    </div>
+    <div>
+        Duration:{{video.duration}}
+    </div>
+    <div> 
+        <video  controls>
+        <source [src]="video.video">
+        </video>
+    </div>
+</div>

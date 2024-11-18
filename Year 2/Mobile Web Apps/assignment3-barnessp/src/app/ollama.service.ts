@@ -29,7 +29,7 @@ export class OllamaService
     // so import the module in app.config.ts
     http = inject(HttpClient);
 
-
+ 
     // "generate" API: generate a response fro a given prompt
     // INPUT: model, prompt, options, stream ...
     // OUTPUT: model, created_at, response, done, eval_count, eval_duration,...
@@ -66,21 +66,44 @@ export class OllamaService
         );
     }
 
-
-    // @@TODO:
-    // "chat" API: generate the next message in a chat
-    // INPUT: model, messages{role,content,...}, tools, options, ...
-    // OUTPUT: model, created_at, message{role,content}, done, eval_count, eval_duration
-    // Ref: https://github.com/ollama/ollama/blob/main/docs/api.md#generate-a-chat-completion
-    /*
-    chat(messages: Message[] = []): Observable<any>
-    {
-        // 1. make a copy of "messages" param to Ollama-specific one, {role,content}
+    chat(messages: Message[] = []): Observable<any> {
+        // 1. make a copy of messages param to Ollama-specific, {role,content}
+    
+        let ollamaMessages = messages.map((m) => {
+          if (m.role == 'You') return { role: 'user', content: m.content };
+          else return { role: 'assistant', content: m.content };
+        });
+    
         // 2. construct request body including {model,messages}
-        // 3. send post request with body and options {responseType, observe, reportProgress}
-        // 4. return Observable object after filter & map the partialTexts
-    }
-            
-*/
+    
+        let body = {
+          model: MODEL,
+    
+          messages: ollamaMessages,
+        };
+    
+        // 3. send post request with body and options
+    
+        return (this.http
+          .post(URL + 'chat', body, {
+            responseType: 'text',
+            observe: 'events',
+            reportProgress: true,
+          })
+    
+          .pipe(
+            filter((e) => e.type == 3),
+    
+            map((e: any) => {
+              // convert partialText value (string) to JSON (array of objects)
+    
+              let partials = e.partialText.trim().split('\n');
+              return partials.map((e: string) => JSON.parse(e));
+            })
+          ));
+    
+        
+      }
+   
 }
 
