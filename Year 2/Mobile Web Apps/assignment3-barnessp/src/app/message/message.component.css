@@ -1,0 +1,14 @@
+.messagewrap{
+    display:flex;
+}
+.message{
+    max-width: 80%;
+    flex: 0 1 auto;
+}
+.row2{
+    display:flex;
+}
+.text{
+    border-radius: 10px;
+    white-space:pre-wrap;
+}

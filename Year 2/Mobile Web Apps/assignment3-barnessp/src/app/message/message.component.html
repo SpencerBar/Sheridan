@@ -1,0 +1,12 @@
+<div class="messagewrap" [style.justify-content]="align">
+ <div class="message"  >
+    <div class="row1">
+       {{message.role}} {{message.time}}
+    </div>
+    <div class="row2" [style.justify-content]="align">
+        <div class="text" [style.background-color]="bgColor">
+            {{message.content}}
+        </div>
+    </div>
+ </div>
+</div>

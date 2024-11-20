@@ -1,0 +1,9 @@
+<div class="inputblock">
+  <input matInput type="text" class="input" [(ngModel)]="input">
+  <button mat-mini-fab class="clear" (click)="clearInput()">
+    <mat-icon>delete_outline</mat-icon>
+  </button>
+</div>
+<p>
+  Input Text: {{input}}
+</p>
