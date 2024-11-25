@@ -1,13 +1,11 @@
-// NOTE: copy it to your ollama.service.ts file
 
-// import required modules
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, pipe, map, filter } from 'rxjs';
 
 // define constants
 const MODEL = "llama3.2:1b";                // LLM name
-const URL = "http://localhost:8080/api/";  // ollama API, make sure use your own port number
+const URL = "http://localhost:11434/api/";  // ollama API, make sure use your own port number
 
 
 // define on interface to hold a single message
@@ -29,11 +27,6 @@ export class OllamaService
     // so import the module in app.config.ts
     http = inject(HttpClient);
 
- 
-    // "generate" API: generate a response fro a given prompt
-    // INPUT: model, prompt, options, stream ...
-    // OUTPUT: model, created_at, response, done, eval_count, eval_duration,...
-    // Ref: https://github.com/ollama/ollama/blob/main/docs/api.md
     generate(prompt: string = ""): Observable<any>
     {
         // construct request body

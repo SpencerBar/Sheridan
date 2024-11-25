@@ -1,7 +1,8 @@
-<div class="messagewrap" [style.justify-content]="align">
+<div *ngIf="message.role !== 'System'" class="messagewrap" [style.justify-content]="align">
  <div class="message"  >
     <div class="row1">
-       {{message.role}} {{message.time}}
+        <img [src]="icon"/>
+        {{message.role}} {{message.time}}
     </div>
     <div class="row2" [style.justify-content]="align">
         <div class="text" [style.background-color]="bgColor">
