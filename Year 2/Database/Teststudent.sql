@@ -1,0 +1,94 @@
+--CREATE TABLE CUSTOMER
+--(
+--custname varchar (20),
+--custstreet varchar(20),
+--custcity varchar(20),
+--custprovince varchar(20),
+--custpostal char(7),
+--custhphone char(13),
+--custbphone char(13),
+--constraint customer_cname_pk primary key (custname)
+--);
+--
+--select * from hr.countries
+--where country_name in('Belgium', 'Brazil');
+--where country_name = 'Belgium' or country_name = 'Brazil';
+--
+--select job_title from hr.jobs
+--where salary >= 6000 and salary <= 16000;
+--where max_salary between 6000 and 16000;
+--
+--select salary from hr.employees
+--where first_name = 'Amit' and last_name = 'Banda';
+--
+--select street_address from hr.locations
+--where city in ('Tokyo', 'Toronto');
+--
+--select max_salary - min_salary as difference from hr.jobs
+--where job_title in 'President';
+--
+--select employee_id, first_name, last_name, salary from hr.employees
+--where first_name not in('David' , 'Bruce') and last_name not in('Bernstein', 'Ernst');
+--drop table customer;
+--CREATE TABLE Department (
+--DepartmentID INT PRIMARY KEY,
+--DepartmentName VARCHAR(50)
+--);
+--
+--CREATE TABLE Customer (
+--CustomerID INT PRIMARY KEY,
+--CustomerName VARCHAR(50)
+--);
+--
+--CREATE TABLE Project (
+--ProjectID INT PRIMARY KEY,
+--ProjectName VARCHAR(50)
+--);
+--
+--CREATE TABLE Employee (
+--EmployeeID INT PRIMARY KEY,
+--FirstName VARCHAR(50),
+--LastName VARCHAR(50),
+--Salary DECIMAL(10, 2),
+--DepartmentID INT,
+--CONSTRAINT FK_Department FOREIGN KEY (DepartmentID) REFERENCES
+--Department(DepartmentID)
+--);
+--
+--CREATE TABLE Dependent (
+--DependentID INT PRIMARY KEY,
+--EmployeeID INT,
+--DependentName VARCHAR(50),
+--CONSTRAINT FK_Employee FOREIGN KEY (EmployeeID) REFERENCES
+--Employee(EmployeeID)
+--);
+--
+--
+--
+--CREATE TABLE EmployeeProject (
+--EmployeeID INT,
+--ProjectID INT,
+--CONSTRAINT FK_Employee_Project_Employee FOREIGN KEY (EmployeeID)
+--REFERENCES
+--Employee(EmployeeID),
+--CONSTRAINT FK_Employee_Project_Project FOREIGN KEY (ProjectID)
+--REFERENCES Project(ProjectID)
+--);
+--
+--CREATE TABLE Orders (
+--OrderID INT PRIMARY KEY,
+--CustomerID INT,
+--OrderDate DATE,
+--CONSTRAINT FK_Customer FOREIGN KEY (CustomerID) REFERENCES
+--Customer(CustomerID)
+--);
+--
+--
+--select firstname, lastname from employee
+--where salary > (select avg(salary) from  employee);
+--
+--select departmentName, firstname, lastname salary 
+--from department d join employee e 
+--on d.departmentid = e.departmentid
+--where salary = (select MAX(salary) from employee where departmentid = d.departmentid);
+--

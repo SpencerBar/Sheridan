@@ -1,0 +1,16 @@
+/* barnessp 991728219 */
+
+.flexblock {   
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    flex: 1 1 0;
+}
+
+.videoblock {       
+     flex: 1 1 0;
+     border:1px solid #000;
+     
+        
+}

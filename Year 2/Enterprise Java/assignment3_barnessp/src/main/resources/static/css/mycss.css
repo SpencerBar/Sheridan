@@ -1,0 +1,57 @@
+/* General styles */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2c3e50; /* Light midnight blue */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    flex: 1; /* Push the footer to the bottom */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #ecf0f1; /* Light text color */
+    background-color: #34495e; /* Darker blue button */
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.links a:hover {
+    background-color: #1abc9c; /* Aqua hover effect */
+    color: white;
+}
+
+/* Footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #34495e; /* Footer background */
+    text-align: center;
+    padding: 10px 0;
+    color: #ecf0f1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add space between logo and text */
+}
+
+.footer-logo {
+    width: 30px; /* Adjust logo size */
+    height: auto;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--  declaring namespace -->
+<html xmlns:th ="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Phone</title>
+<!--  importing css -->
+<link rel="stylesheet" type="text/css" th:href="@{styles.css}">
+</head>
+
+<body>
+<!--  form which posts to the @postmapping("/addPhone") in HomeController using the phone object -->
+<form method="post" action="#" th:action="@{/addPhone}" th:object="${phone}">
+     <div class="form-group">
+            <label for="brand">Brand</label><br>
+            <input type="text" id="brand" th:field="*{brand}" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="model">Model</label><br>
+            <input type="text" id="model" th:field="*{modelName}" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label><br>
+            <input type="number" id="price" th:field="*{price}" required/>
+        </div>
+	<!-- A dropdown makes it easier for later in the searchPhones section -->
+        <div class="form-group">
+            <label for="category">Category</label><br>
+            <select th:field="*{category}">
+            <option th:each="aCat:*{categories}" th:value="${aCat}" th:text="${aCat}"/>
+            </select>
+        </div>
+	<!--  wanted a larger text box so you could read all the features you're inputting at once -->
+        <div class="form-group">
+            <label for="features">Features</label><br>
+            <textarea id="features" th:field="*{features}" rows="4" cols="50"></textarea> <!-- Larger text box -->
+        </div>
+		<div class="form-group">
+        	<input type="submit" value="Submit" />
+        	
+        </div>
+        <!-- link to home -->
+        <div class="form-group">
+			<a th:href="@{/}">Go Home</a>
+		</div>
+    </form>
+		
+
+
+</body>
+</html>

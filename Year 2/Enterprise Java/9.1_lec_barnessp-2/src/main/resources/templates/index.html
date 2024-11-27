@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>HARRO</title>
+</head>
+<body>
+<h1>Welcome! Staying secure is a pretty big deal!</h1>
+
+
+<div sec:authorize="isAuthenticated()">
+	User's Name:<span sec:authentication="name"></span><br>
+	Roles:<span sec:authentication="principal.authorities"></span><br><br>
+	<div>
+		<form method="post" action="#" th:action="@{/logout}">
+		<!-- get asks if you want to log out -->
+		<input type="submit" value="Logout" />
+		</form>
+	</div>
+</div>
+</body>
+</html>
