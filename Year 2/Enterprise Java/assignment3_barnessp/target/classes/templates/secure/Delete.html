@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Delete Employee</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/mycss.css" th:href="@{/css/mycss.css}" />
+</head>
+<body>
+	<div class="container">
+		<h1>Employee Management</h1>
+		<h2>Delete Employee</h2>
+		<div class="links">
+			<form name="form" action="#" th:action="@{/delete}" method="post"
+				onsubmit="return verify()">
+				Employee ID: <input type="text" name="EMPLOYEE_ID" /><br> <input
+					type="submit" value="Delete">
+			</form>
+		</div>
+		<div class="links">
+		 <table border="1">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Hire Date</th>
+                <th>Job ID</th>
+                <th>Salary</th>
+                <th>Commission</th>
+                <th>Manager ID</th>
+                <th>Department ID</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!--  i dont know why but i put a table displaying the employees here so you can see who you are deleting -->
+        <!--  im just binding the fields to each td -->
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.EMPLOYEE_ID}"></td>
+                <td th:text="${employee.FIRST_NAME}"></td>
+                <td th:text="${employee.LAST_NAME}"></td>
+                <td th:text="${employee.EMAIL}"></td>
+                <td th:text="${employee.PHONE_NUMBER}"></td>
+                <td th:text="${#dates.format(employee.HIRE_DATE, 'yyyy-MM-dd')}"></td>
+                <td th:text="${employee.JOB_ID}"></td>
+                <td th:text="${employee.SALARY}"></td>
+                <td th:text="${employee.COMMISSION_PCT}"></td>
+                <td th:text="${employee.MANAGER_ID}"></td>
+                <td th:text="${employee.DEPARTMENT_ID}"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    
+		<div class="links">
+			<a th:href="@{/admin}">Back to Admin </a> <a th:href="@{/}">Back
+				to home page</a>
+		</div>
+
+		<footer>
+			<div class="footer-content">
+				<img src="../static/images/spring-boot-logo.png"
+					th:src="@{/images/spring-boot-logo.png}" alt="Logo"
+					class="footer-logo" />
+				<p>&copy;Spencer Barnes 2024 Employee Management System</p>
+			</div>
+		</footer>
+	
+	</div>
+</body>
+</html>
