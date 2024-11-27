@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+
+/* css for body changing font, adding flex, centering and changing colors*/
+body {
+	display:flex;
+	 flex-direction: column; 
+	justify-content:center;
+    font-family: Arial, sans-serif;
+    background-color: #2c3e50;
+    color: white; 
+    justify-content: center;
+    align-items: center;
+ 
+}
+/* input css adding border, text color and background color*/
+input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #34495e; 
+    color: white;
+}
+/*Just flex tings */
+.content-container {
+   
+    flex-direction: column; 
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 20px; 
+}
+
+.form-group {
+    margin-bottom: 20px; 
+    width: 100%; 
+    text-align: center;
+}
+
+textarea{padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #34495e; 
+    color: white;}
+/* specific submit input colors for high visibility*/
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/*Me trying to center the tables because it wont center on its own */
+
+.phone-table {
+	
+    width: 100%; 
+    max-width: 800px; 
+    min-width: 120px;
+    
+}
+.phone-table th {
+	padding-left: 7.5px;
+	padding-right:7.5px;
+	min-width: 120px;
+    background-color: #1abc9c; 
+}
+
+/*Purple links are ugly and low visibility */
+a {
+    text-decoration: none;
+    color: #00bcd4; 
+    font-weight: bold;
+}
+a:hover {
+    color: #00e5ff;
+
+a:visited {
+    color: #008ba3; 
+}
+
+
