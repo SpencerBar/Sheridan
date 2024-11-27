@@ -3,6 +3,7 @@ SET SERVEROUTPUT ON;
 CREATE TABLE myemployees AS
 SELECT * FROM HR.employees;
 DECLARE
+--  hi
 --creating emp_ID and emp_Rating
     emp_ID myemployees.employee_id%TYPE;
     emp_Rating Employee_performance_rating.performance_rating%TYPE;
