@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Search</title>
+</head>
+<body>
+	<table>
+
+		<tr th:each="R : ${TheatreReservationList}">
+			<td th:text="${R.id}"></td>
+			<td th:text="${R.title}"></td>
+			<td th:text="${R.price}"></td>
+			<td th:text="${R.genre}"></td>
+			<td th:text="${R.seatAvail}"></td>
+			<td><a th:href="@{/deleteRes/}+${R.id}">Delete</a></td>
+		</tr>
+	</table>
+	<form method="post" action="" th:action="@{/searchRes}"
+		th:object="${TheatreReservation}">
+		<input type="hidden" name="id" th:field="*{id}" /> Choose Genre: <select
+			name="genre" th:field="*{genre}">
+			<option th:each="aGen:*{genres}" th:value="${aGen}" th:text="${aGen}" />
+			<option th:value="None" th:text="None" />
+		</select> <input type="submit" value="Go!" />
+
+	</form>
+	<a href="/">Home</a>
+
+</body>
+</html>
