@@ -1,0 +1,26 @@
+<h1>Angular Material Table</h1>
+
+<div>
+  <label> Filter Students: </label>
+  <input type="text" [(ngModel)]="filterString" (ngModelChange)="filterStudents()">
+</div>
+<mat-table [dataSource]="dataSource" matSort #sortStudents="matSort">
+  
+  <ng-container matColumnDef="firstName">
+  <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+  <mat-cell *matCellDef="let s">{{s.firstName}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+  <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+  <mat-cell *matCellDef="let s">{{s.lastName}}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['firstName', 'lastName']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['firstName', 'lastName'];"></mat-row>
+
+</mat-table>
+<mat-paginator #pageStudents [pageSizeOptions]="[5,10,20,50]" showFirstLastButtons>
+
+</mat-paginator>
+

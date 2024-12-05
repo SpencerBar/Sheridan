@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>{{ country.Name }}</h2>
+<mat-dialog-content>
+  <div>
+    <img [src]="getMapImage(country)"/>
+    <p><strong>Code:</strong> {{ country.Code }}</p>
+    <p><strong>Code 2:</strong> {{ country.Code2 }}</p>
+    <p><strong>Continent:</strong> {{ country.Continent }}</p>
+    <p><strong>Region:</strong> {{ country.Region }}</p>
+    <p><strong>Surface Area:</strong> {{ country.SurfaceArea }} km²</p>
+    <p><strong>Population:</strong> {{ country.Population }}</p>
+    
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+</mat-dialog-actions>
