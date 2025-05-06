@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/message/message.component.css"],
-  "sourcesContent": [".messagewrap{\r\n    display:flex;\r\n}\r\n.message{\r\n    max-width: 80%;\r\n    flex: 0 1 auto;\r\n}\r\n.row2{\r\n    display:flex;\r\n}\r\n.text{\r\n    padding:10px;\r\n    border-radius: 10px;\r\n    white-space:pre-wrap;\r\n}\r\nimg {\r\n    width: 3vw;\r\n    height: 3vw;\r\n    object-fit: contain; \r\n    max-width: 100%; \r\n    max-height: 100%;\r\n  }"],
-  "mappings": ";AAAA,CAAC;AACG,WAAQ;AACZ;AACA,CAAC;AACG,aAAW;AACX,QAAM,EAAE,EAAE;AACd;AACA,CAAC;AACG,WAAQ;AACZ;AACA,CAAC;AACG,WAAQ;AACR,iBAAe;AACf,eAAY;AAChB;AACA;AACI,SAAO;AACP,UAAQ;AACR,cAAY;AACZ,aAAW;AACX,cAAY;AACd;",
-  "names": []
-}

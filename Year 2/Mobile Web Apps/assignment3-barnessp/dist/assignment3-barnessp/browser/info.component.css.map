@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/info/info.component.css"],
-  "sourcesContent": [".info {\r\n    display: flex;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: auto;\r\n    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */\r\n}\r\n\r\n.info-content {\r\n    background-color: white;\r\n    margin: 15% auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n    max-width: 500px; /* Limit max width */\r\n    border-radius: 5px; /* Rounded corners */\r\n}\r\n\r\nbutton{\r\n    \r\n    background-color: blue;\r\n    color:white;\r\n   padding: 5px;\r\n   \r\n    border-radius: 25px;\r\n\r\n}\r\n\r\n.close {\r\n\r\n    color: #aaa;\r\n    \r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: black;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}"],
-  "mappings": ";AAAA,CAAC;AACG,WAAS;AACT,YAAU;AACV,WAAS;AACT,QAAM;AACN,OAAK;AACL,SAAO;AACP,UAAQ;AACR,YAAU;AACV,oBAAkB,KAAK,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE;AACpC;AAEA,CAAC;AACG,oBAAkB;AAClB,UAAQ,IAAI;AACZ,WAAS;AACT,UAAQ,IAAI,MAAM;AAClB,SAAO;AACP,aAAW;AACX,iBAAe;AACnB;AAEA;AAEI,oBAAkB;AAClB,SAAM;AACP,WAAS;AAER,iBAAe;AAEnB;AAEA,CAAC;AAEG,SAAO;AAEP,aAAW;AACX,eAAa;AACjB;AAEA,CARC,KAQK;AACN,CATC,KASK;AACF,SAAO;AACP,mBAAiB;AACjB,UAAQ;AACZ;",
-  "names": []
-}
