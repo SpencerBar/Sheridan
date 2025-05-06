@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "exampractice-barnessp": {
+    "finals-barnessp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/exampractice-barnessp",
+            "outputPath": "dist/finals-barnessp",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "exampractice-barnessp:build:production"
+              "buildTarget": "finals-barnessp:build:production"
             },
             "development": {
-              "buildTarget": "exampractice-barnessp:build:development"
+              "buildTarget": "finals-barnessp:build:development"
             }
           },
           "defaultConfiguration": "development"
