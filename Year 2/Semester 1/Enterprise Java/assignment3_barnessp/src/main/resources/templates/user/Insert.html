@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Insert Employee</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/mycss.css" th:href="@{/css/mycss.css}" />
+</head>
+<body>
+	<div class="container">
+		<h1>Employee Management</h1>
+		 <h2>Insert Employee</h2>
+		 <!--  Same basic  form as in update -->
+		 <div class="links">
+			<form action="/insert" method="POST">
+			<div>
+				<label for="EMPLOYEE_ID">Employee ID:</label> 
+					<input type="text" id="EMPLOYEE_ID" name="EMPLOYEE_ID" required>
+			</div>
+			<div>
+				<label for="FIRST_NAME">First Name:</label> 
+					<input type="text" id="FIRST_NAME" name="FIRST_NAME" required>
+			</div> 
+			<div>
+				<label for="LAST_NAME">Last Name:</label> 
+					<input type="text" id="LAST_NAME" name="LAST_NAME" required>
+			</div> 
+			<div>
+				<label for="EMAIL">Email:</label> 
+					<input type="email" id="EMAIL" name="EMAIL" required>  
+			</div>
+			<div>
+				<label for="PHONE_NUMBER">Phone Number:</label> 
+					<input type="text" id="PHONE_NUMBER" name="PHONE_NUMBER" required> 
+			</div>
+			<div>
+				<label for="HIRE_DATE">Hire Date:</label> 
+					<input type="date" id="HIRE_DATE" name="HIRE_DATE" required> 
+			</div>
+			<div>
+				<label for="JOB_ID">Job ID:</label> 
+					<input type="text" id="JOB_ID" name="JOB_ID" required>  
+			</div>
+			<div>
+				<label for="SALARY">Salary:</label> 
+					<input type="number" id="SALARY"name="SALARY" required>
+			</div>
+			<div>
+				<label for="COMMISSION_PCT">Commission Percentage:</label>
+				 	<input type="number"  id="COMMISSION_PCT" name="COMMISSION_PCT" required>
+			</div>
+			<div>
+				<label for="MANAGER_ID">Manager ID:</label> 
+				 	<input type="number" id="MANAGER_ID" name="MANAGER_ID" required>
+			</div>
+			<div>
+				<label for="DEPARTMENT_ID">Department:</label>
+    				<select id="DEPARTMENT_ID" name="DEPARTMENT_ID" required>
+				        <option value="">Select Department</option>
+				        <th:block th:each="department : ${departments}">
+				            <option th:value="${department.DEPARTMENT_ID}" th:text="${department.DEPARTMENT_NAME}"></option>
+				        </th:block>
+				    </select>
+			</div>
+				<button type="submit">Insert</button>
+			</form>
+		</div>
+
+		<div class="links">
+			<a th:href="@{/admin}">Back to Admin </a>
+			<a th:href="@{/user}">Back to User </a>
+			<a th:href="@{/}">Back to home page</a>
+		</div>
+
+		<footer>
+        <div class="footer-content">
+            <img src="../static/images/spring-boot-logo.png" th:src="@{/images/spring-boot-logo.png}" alt="Logo" class="footer-logo" />
+            <p>&copy;Spencer Barnes 2024 Employee Management System</p>
+        </div>
+    </footer>
+	</div>
+</body>
+</html>

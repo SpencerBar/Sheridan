@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/mycss.css" th:href="@{/css/mycss.css}" />
+</head>
+<body>
+	<div class="container">
+
+		<h1>Session Details</h1>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>SessionNo</th>
+					<th>Slot Time</th>
+					<th>Date
+					<th>Availability</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="sessionItem : ${sessionList}">
+					<td th:text="${sessionItem.sessionNo}"></td>
+					<td th:text="${sessionItem.slotTime}"></td>
+					<td th:text="${sessionItem.sessionDate}"></td>
+					<td th:text="${sessionItem.available}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+		<h2>Select date</h2>
+		<div class= "links">
+		<form method="post" action="" th:action="@{/reserveSession}">
+			<!-- Loop through availSessionList to generate session options -->
+			<select id="sessionDate" name="sessionNo">
+				<option th:each="s : ${availSessionList}" th:value="${s.sessionNo}"
+					th:text="${s.sessionDate} + ' @ ' + ${s.slotTime}"
+					th:if="${s.available}"></option>
+			</select> <br> <br> <label for="registrationDate">Registration
+				Date:</label> <br> <input type="date" id="date" name="date" rquired>
+			
+			<br> <label for="email">Email:</label> <br> <input
+				type="email" id="email" name="email" required> <br>
+			
+
+			<input type="submit" value="Reserve" name="reserve-submit">
+
+		</form>
+		</div>
+		<div class="links">
+		<br> <br> <a th:href="@{/logout}" th:action="@{/logout}">Log Out</a>
+		</div>
+	</div>
+
+	<div>
+		<footer th:replace="~{fragments/footer.html :: footer}"></footer>
+	</div>
+</body>
+</html>
+
+
+

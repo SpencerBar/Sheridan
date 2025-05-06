@@ -1,0 +1,60 @@
+-- DVDs Table
+CREATE TABLE DVDS (
+TapeID NUMBER NOT NULL,
+Title VARCHAR2(50),
+Release_Year NUMBER,
+Price NUMBER,
+CategoryID NUMBER NOT NULL,
+RentedOut VARCHAR2(3),
+Rating VARCHAR2(6),
+ActionOnReturn VARCHAR2(30),
+CONSTRAINT pk_tape PRIMARY KEY (TapeID),
+CONSTRAINT fk_category FOREIGN KEY (CategoryID) 
+REFERENCES Movie_Category(CategoryID),
+CONSTRAINT CHK_RentedOut CHECK (RentedOut = 'Yes' OR RentedOut = 'No'));
+
+SELECT * FROM customer_list
+
+-- Category Table
+CREATE TABLE Movie_Category(
+CategoryID NUMBER NOT NULL,
+CategoryName VARCHAR2(30),
+CONSTRAINT pk_category PRIMARY KEY (CategoryID)
+);
+
+-- Customer List Table
+CREATE TABLE Customer_List (
+CustNo NUMBER GENERATED ALWAYS AS IDENTITY
+(START WITH 1 INCREMENT BY 1),
+FirstName VARCHAR2(20),
+LastName VARCHAR2(20),
+PhoneNumber VARCHAR2(14) NOT NULL,
+Birthdate DATE NOT NULL,
+DriversLicenseNumber NUMBER(9) NOT NULL,
+Status VARCHAR(30),
+CONSTRAINT pk_custno PRIMARY KEY (CustNo)
+);
+
+
+select * from dvd_rental
+
+
+CREATE TABLE DVD_Rental(
+RentalID NUMBER NOT NULL,
+RentalDate DATE NOT NULL,
+CustNo NUMBER NOT NULL,
+TapeID NUMBER NOT NULL,
+CONSTRAINT pk_rental_id PRIMARY KEY (RentalID),
+CONSTRAINT fk_custno FOREIGN KEY  (CustNo)
+REFERENCES Customer_List(CustNo),
+CONSTRAINT fk_tape FOREIGN KEY (TapeID) REFERENCES DVDS(TapeID)
+);
+
+
+Alter table DVD_rental add constraint fk_id_no FOREIGN KEY (CustomerID, CustNo)
+REFERENCES customer_list (CustomerID, CustNo);
+
+
+GRANT ALL PRIVILEGES ON movie_category TO LEADER3;
+
+

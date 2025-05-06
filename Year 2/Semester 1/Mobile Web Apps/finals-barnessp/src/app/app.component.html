@@ -1,0 +1,37 @@
+
+<h1>Faculties & Programs</h1>
+<p>
+Order By: &nbsp;
+<mat-button-toggle-group [(ngModel)]="orderBy" (change)="handleOrderBy()">
+ <mat-button-toggle value="all">All</mat-button-toggle>
+  &nbsp;
+  <mat-button-toggle value="FAAD">FAAD</mat-button-toggle>
+  <mat-button-toggle value="FAHCS">FAHCS</mat-button-toggle>
+  <mat-button-toggle value="FAST">FAST</mat-button-toggle>
+  <mat-button-toggle value="PSB">PSB</mat-button-toggle>
+</mat-button-toggle-group>
+</p>
+<mat-table [dataSource]="dataSource">
+  <mat-header-row *matHeaderRowDef="headers"></mat-header-row>
+  <mat-row *matRowDef="let row;columns:headers"></mat-row>
+
+  <ng-container matColumnDef="facultyId">
+    <mat-header-cell *matHeaderCellDef>Faculty ID</mat-header-cell>
+    <mat-cell *matCellDef="let s">{{s.facultyId}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="faculty">
+    <mat-header-cell *matHeaderCellDef>Faculty Name</mat-header-cell>
+    <mat-cell *matCellDef="let s">{{s.faculty}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="programId">
+    <mat-header-cell *matHeaderCellDef>Program ID</mat-header-cell>
+    <mat-cell *matCellDef="let s">{{s.programId}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="program">
+    <mat-header-cell *matHeaderCellDef>Program</mat-header-cell>
+    <mat-cell *matCellDef="let s">{{s.program}}</mat-cell>
+  </ng-container>
+
+</mat-table>
