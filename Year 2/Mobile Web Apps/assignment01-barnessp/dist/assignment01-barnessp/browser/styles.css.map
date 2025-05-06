@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/styles.css"],
-  "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\r\nbody {\r\n    background-color:rgb(50, 50, 54);\r\n    color:rgb(210, 192, 169);\r\n    font-family:Verdana;\r\n}"],
-  "mappings": ";AACA;AACI,oBAAiB,IAAI,EAAE,EAAE,EAAE,EAAE;AAC7B,SAAM,IAAI,GAAG,EAAE,GAAG,EAAE;AACpB,eAAY;AAChB;",
-  "names": []
-}
