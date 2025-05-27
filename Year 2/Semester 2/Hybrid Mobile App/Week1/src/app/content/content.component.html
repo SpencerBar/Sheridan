@@ -1,0 +1,11 @@
+<div class="inputArea">
+<h3>Data Binding Demonstration</h3>
+<p>{{city}}</p>
+<label><input [placeholder] = "city">
+</label><br>
+<label>2-way binding example<input bind-placeholder = "city" [(ngModel)]="city">
+</label><br><br>
+<button [disabled]="city===''" (click)="clearCity()">Reset City</button>
+<img [src]="myImage">
+<h3 on-mouseover="mouse1()" (mouseout)="mouse2()">Event Binding</h3>
+</div>

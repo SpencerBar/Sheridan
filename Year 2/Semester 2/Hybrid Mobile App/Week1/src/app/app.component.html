@@ -1,2 +1,8 @@
-<app-header>
+<!-- <app-header>
 </app-header>
+<app-content>
+</app-content> -->
+
+<app-c1 [c1Data]="homeData"></app-c1>
+<app-c2 (childMsg)='getMsg($event)'></app-c2><br>
+{{myMsg.fName}} {{myMsg.lName}}

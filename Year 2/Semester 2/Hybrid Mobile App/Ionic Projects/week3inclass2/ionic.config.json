@@ -1,0 +1,7 @@
+{
+  "name": "week3inclass2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

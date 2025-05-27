@@ -1,0 +1,7 @@
+{
+  "name": "w2inclass1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
