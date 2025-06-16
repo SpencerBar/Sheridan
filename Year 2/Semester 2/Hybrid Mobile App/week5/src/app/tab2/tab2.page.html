@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-input [(ngModel)]='myMsg'>Enter Data</ion-input>
+  <ion-button (click)='setData()'>Set Data:</ion-button>
+  <ion-button [routerLink]="['/page1']">Page 1</ion-button>
+ <!-- <ion-button [routerLink]="['/page2']">Page 2</ion-button>-->
+</ion-content>

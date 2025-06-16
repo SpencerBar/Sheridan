@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button [routerLink]="['/page2']"
+  [queryParams]="{name:'Andy',score:99}">Page 2 Query</ion-button>
+  <ion-button (click)="goPage2()">Page 2 Query Param</ion-button>
+  <ion-button [routerLink]="['/page3']"
+ [state]="{name:'Andy',comments:'State property'}">
+ Page 3 State Properety</ion-button>
+</ion-content>
