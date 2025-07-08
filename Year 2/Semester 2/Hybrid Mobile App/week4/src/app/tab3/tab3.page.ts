@@ -8,6 +8,7 @@ import { Router,RouterModule } from '@angular/router';
   styleUrls: ['tab3.page.scss'],
   imports: [RouterModule,IonButton,IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
 })
+
 export class Tab3Page {
   constructor(private router:Router) {}
   goPage2(){

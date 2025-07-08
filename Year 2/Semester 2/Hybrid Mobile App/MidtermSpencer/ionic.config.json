@@ -1,0 +1,7 @@
+{
+  "name": "MidtermSpencer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
